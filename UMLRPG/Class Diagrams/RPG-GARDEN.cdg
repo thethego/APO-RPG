@@ -2,11 +2,91 @@
 
 <ClassDiagram name="Personnage">
   <ClassDiagramComponents>
-    <Class name="Personnage" package="" visibility="public" xPosition="318.0" yPosition="22.0">
+    <Class name="Personnage" package="" visibility="public" xPosition="496.0" yPosition="31.0">
+      <Fields/>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Controleur" package="" visibility="public" xPosition="224.0" yPosition="22.0">
+      <Fields>
+        <Field name="agir" type="Object" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="ControleurIA" package="" visibility="public" xPosition="3.0" yPosition="2.0">
+      <Fields/>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="ControleurHumain" package="" visibility="public" xPosition="3.0" yPosition="96.0">
+      <Fields/>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Interface name="Capacité" package="" visibility="public" xPosition="214.0" yPosition="167.0">
+      <Methods/>
+    </Interface>
+    <Class name="Attaque" package="" visibility="public" xPosition="8.0" yPosition="332.0">
+      <Fields/>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Parade" package="" visibility="public" xPosition="203.0" yPosition="332.0">
+      <Fields/>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Soin" package="" visibility="public" xPosition="403.0" yPosition="332.0">
+      <Fields/>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Item" package="" visibility="public" xPosition="793.0" yPosition="161.0">
+      <Fields/>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Arme" package="" visibility="public" xPosition="1013.0" yPosition="332.0">
+      <Fields/>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Armure" package="" visibility="public" xPosition="820.0" yPosition="332.0">
+      <Fields/>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Consommable" package="" visibility="public" xPosition="635.0" yPosition="332.0">
+      <Fields/>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Effet" package="" visibility="public" xPosition="793.0" yPosition="17.0">
+      <Fields/>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Action" package="" visibility="public" xPosition="496.0" yPosition="175.0">
       <Fields/>
       <Constructors/>
       <Methods/>
     </Class>
   </ClassDiagramComponents>
-  <ClassDiagramRelations/>
+  <ClassDiagramRelations>
+    <HasRelation name="controle" source="Controleur" target="Personnage" type="Default" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <HasRelation name="use" source="Action" target="Capacité" type="Default" sourceCardinality="0..1" targetCardinality="0..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Soin" target="Capacité"/>
+    <HasRelation name="possède" source="Personnage" target="Item" type="Default" sourceCardinality="0..1" targetCardinality="1..*" collectionType="List"/>
+    <IsRelation name="is" source="Armure" target="Item"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Parade" target="Capacité"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Attaque" target="Capacité"/>
+    <HasRelation name="possède" source="Personnage" target="Capacité" type="Default" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <HasRelation name="a" source="Item" target="Effet" type="Default" sourceCardinality="0..1" targetCardinality="0..*" collectionType="List"/>
+    <IsRelation name="is" source="ControleurIA" target="Controleur"/>
+    <IsRelation name="is" source="Consommable" target="Item"/>
+    <HasRelation name="utilise" source="Action" target="Consommable" type="Default" sourceCardinality="0..1" targetCardinality="0..1"/>
+    <IsRelation name="is" source="ControleurHumain" target="Controleur"/>
+    <IsRelation name="is" source="Arme" target="Item"/>
+  </ClassDiagramRelations>
 </ClassDiagram>
