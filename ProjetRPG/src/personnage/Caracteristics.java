@@ -9,6 +9,9 @@ package personnage;
  *
  * @author SAM
  */
-class Caracteristique {
-    
+public enum Caracteristics {
+    FORCE,
+    DEXTERITY,
+    HEALTH,
+    DEFENSE
 }
