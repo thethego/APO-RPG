@@ -8,6 +8,7 @@ package caractere;
 import action.Effect;
 import item.Arme;
 import item.Armure;
+import item.Item;
 import java.util.Map;
 
 
@@ -52,5 +53,35 @@ public class Caractere {
         return poidsInventaire;
     }
     
+    public void retireInventaire (Item item)
+    {
+        
+    }
+    
+    public void ajouteInventaire (Item item)
+    {
+        
+    }
+    
+    public void calculSanteMax()
+    {
+        
+    }
+    
+    public void calculDexteriteMax ()
+    {
+        
+    }
+    
+    public void incrementNiveau()
+    {
+        
+    }
+    
+    
+    public int sumCarac()
+    {
+        
+    }
     
 }
