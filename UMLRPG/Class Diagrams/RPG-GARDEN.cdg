@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Personnage">
+  <ClassDiagramComponents>
+    <Class name="Personnage" package="" visibility="public" xPosition="318.0" yPosition="22.0">
+      <Fields/>
+      <Constructors/>
+      <Methods/>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations/>
+</ClassDiagram>
