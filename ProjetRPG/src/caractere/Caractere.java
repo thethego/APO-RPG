@@ -6,8 +6,8 @@
 package caractere;
 
 import action.Effect;
-import item.Arme;
-import item.Armure;
+import item.Weapon;
+import item.Armor;
 import item.Item;
 import java.util.Map;
 
@@ -37,12 +37,12 @@ public class Caractere {
         
     }
     
-    public void equipeArme(Arme arme)
+    public void equipeArme(Weapon arme)
     {
         
     }
     
-    public void equipeArmure(Armure armure)
+    public void equipeArmure(Armor armure)
     {
         
     }
@@ -81,7 +81,8 @@ public class Caractere {
     
     public int sumCarac()
     {
-        
+     int sumCarac = 0;
+     return sumCarac;
     }
     
 }
