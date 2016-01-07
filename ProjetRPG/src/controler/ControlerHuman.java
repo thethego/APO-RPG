@@ -1,4 +1,4 @@
 package controler;
 
-public class ControlerHuman extends Controller {
+public class ControlerHuman extends Controler {
 }

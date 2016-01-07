@@ -1,4 +1,4 @@
 package controler;
 
-public class ControlerIA extends Controller {
+public class ControlerIA extends Controler {
 }

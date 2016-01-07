@@ -1,6 +1,6 @@
 package controler;
 
-public class Controller {
+public class Controler {
 
     private Object agir;
     
