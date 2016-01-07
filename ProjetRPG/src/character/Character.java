@@ -6,6 +6,9 @@ import item.Weapon;
 import item.Armor;
 import item.Item;
 import java.util.Map;
+import controler.Controler;
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class Character {
@@ -14,16 +17,26 @@ public class Character {
     private int level;
     private int maxweight;
     private int maxhealth;
+    private Controler controler;
     private Map<Caracteristics, Integer> caracteristics;
+    private List<Item> arrayItem;
+    private Item armor;
+    private Item[] weapons;
     
     
 
-    public Character(String name, int level, int maxweight, int healthMax, Map<Caracteristics, Integer> caracteristics) {
+    public Character(String name, int level, int maxweight, int healthMax, Map<Caracteristics, Integer> caracteristics, Controler controler) {
         this.name = name;
         this.level = level;
         this.maxweight = maxweight;
         this.maxhealth = healthMax;
         this.caracteristics = caracteristics;
+        this.controler = controler;
+        this.arrayItem = new ArrayList<>();
+        this.armor = null;
+        this.weapons = new Item[2];
+        this.weapons[0] = null;
+        this.weapons[1] = null;
     }
 
     
@@ -33,14 +46,15 @@ public class Character {
         
     }
     
-    public void equipArme(Weapon arme)
+    public void equipWeapon(int i, Weapon weapon)
     {
+        this.weapons[i] = weapon;
         
     }
     
-    public void equipArmor(Armor armure)
+    public void equipArmor(Armor armor)
     {
-        
+        this.armor = armor;
     }
     
     public int getWeightInventory ()
