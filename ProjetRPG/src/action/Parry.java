@@ -1,9 +1,9 @@
 package action;
 
 
-import item.Power;
+import action.Power;
 
-public class Parry implements Power {
+public class Parry extends Power {
 
     @Override
     public action.Effect Effect(Character source, Character cible) {

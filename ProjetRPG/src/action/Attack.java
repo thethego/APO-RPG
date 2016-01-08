@@ -2,17 +2,24 @@
 package action;
 
 import utils.Dice;
+import character.Character;
+import action.Power;
 
-import item.Power;
+public class Attack extends Power {
 
-public class Attack implements Power {
+    
+    
 
     @Override
-    public action.Effect Effect(Character source, Character cible) {
+    public action.Effect Effect(Character source, Character target) {
+        int dmg;
+        int puissanceattack = source.caracteristics.FORCE;
+        dmg=puissanceattack-target.carateristics.DEFENCE;
+        Effect effect = new Effect(target.caracteristics.health, dmg, true);
+        return effect;
         
-        
-        
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+   
     
 }
