@@ -1,25 +1,20 @@
 
 package action;
 
+import character.Caracteristics;
 import utils.Dice;
 import character.Character;
-import action.Power;
 
 public class Attack extends Power {
 
-    
-    
-
     @Override
-    public action.Effect Effect(Character source, Character target) {
+    public Effect effect(Character source, Character target) {
         int dmg;
-        int puissanceattack = source.caracteristics.FORCE;
-        dmg=puissanceattack-target.carateristics.DEFENCE;
-        Effect effect = new Effect(target.caracteristics.health, dmg, true);
+        int puissanceattack = source.getValueCarac(Caracteristics.FORCE);
+        dmg=puissanceattack-target.getValueCarac(Caracteristics.DEFENCE);
+        Effect effect = new Effect(Caracteristics.HEALTH, dmg, true);
         return effect;
         
     }
-
-   
     
 }

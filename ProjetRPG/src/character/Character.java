@@ -63,22 +63,31 @@ public class Character {
         return poidsInventaire;
     }
     
-    public void rmInventory (Item item)
+    /* return 1 if the Item has been delete from the Inventory,
+    * 0 otherwise
+    */
+    public boolean rmInventory (Item item)
     {
-        
+        return this.arrayItem.remove(item);
     }
     
     public void addInventory (Item item)
     {
-        
+        this.arrayItem.add(item);
     }
     
-    public void calculMaxHealth()
+    public void calculHealth(int i)
     {
-        
+        int health;
+        health = (int)this.caracteristics.get(Caracteristics.HEALTH);
     }
     
-    public void calculDexterityMax ()
+    public int getValueCarac(Caracteristics c){
+        
+        return (int)this.caracteristics.get(c);
+    }
+    
+    public void calculDexterity ()
     {
         
     }
