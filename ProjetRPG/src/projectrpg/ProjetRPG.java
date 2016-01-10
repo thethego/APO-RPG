@@ -6,7 +6,7 @@
 package projectrpg;
 
 /**
- * wesh
+ * 
  * @author theo
  */
 public class ProjetRPG {

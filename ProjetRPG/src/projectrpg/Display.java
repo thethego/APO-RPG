@@ -12,7 +12,13 @@ package projectrpg;
 public class Display {
     
     public void intro(){
-        System.out.println("                      GARDEN PARTY                ");
+        System.out.println("-------------------------------------------------");
+        System.out.println("                                                 ");
+        System.out.println("                                                 ");
+        System.out.println("                  GARDEN PARTY                   ");
+        System.out.println("                                                 ");
+        System.out.println("                                                 ");
+        System.out.println("-------------------------------------------------");
     }
     
 }
