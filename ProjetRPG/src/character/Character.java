@@ -21,7 +21,7 @@ public class Character {
     private Map<Caracteristics, Integer> caracteristics;
     private List<Item> arrayItem;
     private Item armor;
-    private Item[] weapons;
+    public Weapon[] weapons;
     
     
 
@@ -34,7 +34,7 @@ public class Character {
         this.controler = controler;
         this.arrayItem = new ArrayList<>();
         this.armor = null;
-        this.weapons = new Item[2];
+        this.weapons = new Weapon[2];
         this.weapons[0] = null;
         this.weapons[1] = null;
     }
