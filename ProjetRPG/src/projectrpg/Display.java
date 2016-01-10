@@ -3,12 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package projetrpg;
+package projectrpg;
 
 /**
  *
  * @author SAM
  */
-public class Game {
+public class Display {
+    
+    public void intro(){
+        System.out.println("                      GARDEN PARTY                ");
+    }
     
 }

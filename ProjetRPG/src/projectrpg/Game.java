@@ -3,12 +3,20 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package projetrpg;
+package projectrpg;
+
+import projectrpg.Display;
 
 /**
  *
  * @author SAM
  */
-public class Display {
+public class Game {
+    
+    public void play(){
+    
+    Display display = new Display();
+    display.intro();
+    }
     
 }
