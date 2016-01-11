@@ -3,7 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package projetrpg;
+package projectrpg;
+
+import projectrpg.Display;
 
 
 import character.Character;
@@ -12,16 +14,9 @@ import character.Character;
  * @author SAM
  */
 public class Game {
-
+    public void play(){
     
-    private final Character player;
-    
-    
-    public Game(Character pl) {
-        this.player = pl;
-        while(this.player.calculHealth()>0){
-            
-            
-        }
+    Display display = new Display();
+    display.intro();
     }
 }

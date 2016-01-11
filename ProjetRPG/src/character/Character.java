@@ -2,6 +2,7 @@
 package character;
 
 import action.Effect;
+import static character.Caracteristics.DEFENCE;
 import item.Weapon;
 import item.Armor;
 import item.Item;
@@ -23,8 +24,8 @@ public class Character {
     private Controler controler;
     private Map<Caracteristics, Integer> caracteristics;
     private List<Item> arrayItem;
-    private Item armor;
-    private Item[] weapons;
+    private Armor armor;
+    public Weapon[] weapons;
     
     
 
@@ -37,7 +38,7 @@ public class Character {
         this.controler = controler;
         this.arrayItem = new ArrayList<>();
         this.armor = null;
-        this.weapons = new Item[2];
+        this.weapons = new Weapon[2];
         this.weapons[0] = null;
         this.weapons[1] = null;
     }
@@ -69,6 +70,19 @@ public class Character {
     public void equipArmor(Armor armor)
     {
         this.armor = armor;
+        int def = this.getValueCarac(Caracteristics.DEFENCE);
+        this.caracteristics.put(DEFENCE, def+ this.armor.armorValue);
+    }
+    
+    public void dropWeapon(int i){
+        this.weapons[i]=null;
+    }
+    
+    public void dropArmor(){
+        this.armor = null;
+        int def = this.getValueCarac(Caracteristics.DEFENCE);
+        this.caracteristics.put(DEFENCE, def - this.armor.armorValue);
+        
     }
     
     public int getWeightInventory ()
