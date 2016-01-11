@@ -5,6 +5,10 @@
  */
 package projetrpg;
 
+import controler.Controler;
+import controler.ControlerHuman;
+import character.Character;
+
 /**
  * wesh
  * @author theo
@@ -15,7 +19,8 @@ public class ProjetRPG {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Game game = new Game();
+        Character player = new Character("moi", (Controler)new ControlerHuman());
+        Game game = new Game(player);
         // TODO code application logic here
     }
     

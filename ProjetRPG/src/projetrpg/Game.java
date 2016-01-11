@@ -5,10 +5,23 @@
  */
 package projetrpg;
 
+
+import character.Character;
 /**
  *
  * @author SAM
  */
 public class Game {
+
     
+    private final Character player;
+    
+    
+    public Game(Character pl) {
+        this.player = pl;
+        while(this.player.calculHealth()>0){
+            
+            
+        }
+    }
 }

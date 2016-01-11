@@ -5,10 +5,13 @@ import action.Effect;
 import item.Weapon;
 import item.Armor;
 import item.Item;
-import java.util.Map;
 import controler.Controler;
 import java.util.ArrayList;
+import java.util.EnumMap;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 
 public class Character {
@@ -39,7 +42,18 @@ public class Character {
         this.weapons[1] = null;
     }
 
-    
+    public Character(String name, Controler controler) {
+        this(name,0,10,200,new EnumMap<Caracteristics, Integer>(Caracteristics.class),controler);
+        Set listKeys=caracteristics.keySet();  // Obtenir la liste des clés
+        Iterator iterateur=listKeys.iterator();
+        // Parcourir les clés et afficher les entrées de chaque clé;
+        while(iterateur.hasNext())
+        {
+                Object key= iterateur.next();
+                this.caracteristics.put((Caracteristics)key, 0);
+        }
+    }
+
     
     public void applyEffect (Effect effect)
     {
@@ -76,10 +90,11 @@ public class Character {
         this.arrayItem.add(item);
     }
     
-    public void calculHealth(int i)
+    public int calculHealth()
     {
         int health;
-        health = (int)this.caracteristics.get(Caracteristics.HEALTH);
+        health = 100+(int)this.caracteristics.get(Caracteristics.HEALTH)*(int)this.caracteristics.get(Caracteristics.HEALTH)*100;
+        return health;
     }
     
     public int getValueCarac(Caracteristics c){
