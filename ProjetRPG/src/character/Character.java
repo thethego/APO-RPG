@@ -132,5 +132,9 @@ public class Character {
      int sumCarac = 0;
      return sumCarac;
     }
+
+    public Controler getControler() {
+        return controler;
+    }
     
 }

@@ -10,18 +10,23 @@ package action;
  * @author theo
  */
 public enum ActionFight {
-    ATTACK("attaquer"),
-    PARRY("parer"),
-    HEAL("guérir");
+    ATTACK("attaquer",1),
+    PARRY("parer",2),
+    HEAL("guérir",3);
     
     private String name = "";
+    private int number = 0;
    
   //Constructor
-  ActionFight(String name){
+  ActionFight(String name,int number){
     this.name = name;
+    this.number = number;
   }
    
+    @Override
   public String toString(){
-    return name;
+    return "Pour "+name+" tapez "+number+".";
   }
+  
+  
 }

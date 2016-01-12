@@ -5,18 +5,23 @@
  */
 package projectrpg;
 
-import projectrpg.Display;
 
-
-import character.Character;
 /**
  *
  * @author SAM
  */
+
+import character.Character;
+import controler.*;
+
 public class Game {
-    public void play(){
     
-    Display display = new Display();
-    display.intro();
+    public static void play(){
+        Character player = new Character("ennemi",(Controler)new ControlerHuman());
+        Display.intro();
+        Fight fight;
+        for(int i =0;i<10;i++){
+            fight = new Fight(player);
+        }
     }
 }

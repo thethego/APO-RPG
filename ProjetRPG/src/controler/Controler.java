@@ -1,7 +1,9 @@
 package controler;
 
-public class Controler {
+public abstract class Controler {
 
     private Object agir;
+
+    public abstract int choix();
     
 }

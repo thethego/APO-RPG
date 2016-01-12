@@ -5,13 +5,15 @@
  */
 package projectrpg;
 
+import action.ActionFight;
+
 /**
  *
  * @author SAM
  */
 public class Display {
     
-    public void intro(){
+    public static void intro(){
         System.out.println("-------------------------------------------------");
         System.out.println("                                                 ");
         System.out.println("                                                 ");
@@ -21,4 +23,21 @@ public class Display {
         System.out.println("-------------------------------------------------");
     }
     
+    public static void fight(){
+        for(ActionFight af : ActionFight.values()){
+            System.out.println(af);   
+        }
+    }
+    
+    public static void NewFight(){
+        System.out.println("Nouveau combat : ");
+    }
+    
+    public static void Victory(){
+        System.out.println("Vous avez gagner");
+    }
+    
+    public static void Defeat(){
+        System.out.println("Vous avez perdu");
+    }
 }
