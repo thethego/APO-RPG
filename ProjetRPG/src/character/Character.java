@@ -9,10 +9,8 @@ import item.Item;
 import controler.Controler;
 import java.util.ArrayList;
 import java.util.EnumMap;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
 
 
 public class Character {
@@ -45,13 +43,10 @@ public class Character {
 
     public Character(String name, Controler controler) {
         this(name,0,10,200,new EnumMap<Caracteristics, Integer>(Caracteristics.class),controler);
-        Set listKeys=caracteristics.keySet();  // Obtenir la liste des clés
-        Iterator iterateur=listKeys.iterator();
-        // Parcourir les clés et afficher les entrées de chaque clé;
-        while(iterateur.hasNext())
-        {
-                Object key= iterateur.next();
-                this.caracteristics.put((Caracteristics)key, 0);
+        //Set listKeys=caracteristics.keySet();  // Obtenir la liste des clés
+        //Iterator iterateur=listKeys.iterator();
+        for(Caracteristics carac : Caracteristics.values()){
+            this.caracteristics.put((Caracteristics)carac, 0);
         }
     }
 
@@ -125,7 +120,6 @@ public class Character {
     {
         this.level++;
     }
-    
     
     public int sumCarac()
     {
