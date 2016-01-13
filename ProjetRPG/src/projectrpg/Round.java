@@ -21,9 +21,9 @@ public class Round {
     
     public Round(Character player,Character opponent){
         ActionChoice choice = player.getControler().FightChoice();
-        Action.applyAction(player,opponent,choice);
+        Action ac1 = new Action(player,opponent,choice);
         ActionChoice choiceOponent = opponent.getControler().FightChoice();
-        Action.applyAction(player,opponent,choiceOponent);
+        Action ac2 = new Action(player,opponent,choiceOponent);
     }
     
 }

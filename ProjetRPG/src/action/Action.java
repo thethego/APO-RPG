@@ -16,7 +16,7 @@ public final class Action {
         target.applyEffect(choice.getPower().effect(source, target));
     }
     
-    public static void applyAction(Character source, Character target,ActionChoice choice){
+    public void applyAction(){
         target.applyEffect(choice.getPower().effect(source, target));
     }
 }

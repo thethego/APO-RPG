@@ -16,14 +16,17 @@ public class ControlerHuman extends Controler {
     
     @Override
     public ActionFight FightChoice(){
+        System.out.println();
         for(ActionFight af : ActionFight.values()){
             System.out.println(af);   
         }
+        
         System.out.println("Que voulez vous faire ?");
         Scanner sc = new Scanner(System.in);
+        System.out.println();
         int i = sc.nextInt();
         for(ActionFight af : ActionFight.values()){
-            if(af.getNumber()==i-1)
+            if(af.getNumber()==i)
                 return af;
         }
         return ActionFight.ATTACK;

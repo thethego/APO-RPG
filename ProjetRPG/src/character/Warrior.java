@@ -31,7 +31,7 @@ public class Warrior extends Character{
     private void CaractModif(Map<Caracteristics, Integer> caracteristics){
         caracteristics.put(Caracteristics.FORCE, 10);
         caracteristics.put(Caracteristics.DEXTERITY, 10);
-        caracteristics.put(Caracteristics.DEFENCE, 10);
+        caracteristics.put(Caracteristics.DEFENCE, 2);
         caracteristics.put(Caracteristics.HEALTH, 10);
     }
     
