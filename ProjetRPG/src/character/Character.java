@@ -63,6 +63,13 @@ public class Character {
         this.caracteristics.put(c , valueInit + valueEffect);
     }
     
+    public void CancelEffect(action.Effect effect){
+            Caracteristics c = effect.getC();
+        int valueInit = getValueCarac(c);
+        int valueEffect = effect.getValue();
+        this.caracteristics.put(c , valueInit - valueEffect);
+        }
+    
     public void equipWeapon(int i, Weapon weapon)
     {
         this.weapons[i] = weapon;

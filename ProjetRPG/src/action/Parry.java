@@ -10,7 +10,7 @@ public class Parry extends Power {
     public Effect effect(Character source, Character target) {
         int sourceDef=source.getValueCarac(Caracteristics.DEFENCE);
         int bonus = roll(sourceDef);
-        Effect effect = new Effect(Caracteristics.DEFENCE, sourceDef + bonus, true);
+        Effect effect = new Effect(Caracteristics.DEFENCE, sourceDef + bonus, false);
         return effect;
     }
 }

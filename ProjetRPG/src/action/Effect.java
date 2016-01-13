@@ -13,6 +13,8 @@ public class Effect {
         this.value = value;
         this.permanent = permanent;
     }
+    
+    
 
     public Caracteristics getC() {
         return c;

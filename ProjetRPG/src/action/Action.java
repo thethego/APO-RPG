@@ -18,5 +18,10 @@ public final class Action {
     
     public void applyAction(){
         target.applyEffect(choice.getPower().effect(source, target));
+        
+    }
+
+    public ActionChoice getChoice() {
+        return choice;
     }
 }
