@@ -6,7 +6,7 @@
 package projectrpg;
 
 import action.Action;
-import action.ActionChoice;
+import action.Choice;
 import action.Effect;
 import character.Caracteristics;
 import controler.Controler;
@@ -26,24 +26,25 @@ public class Round {
     
     
     public Round(Character player,Character opponent){
-        ActionChoice choice = player.getControler().FightChoice();
+        Effect effect1,effect2;
+        Choice choice = player.getControler().FightChoice();
         Action ac1 = new Action(player,opponent,choice);
-        
-        Effect effect1 = choice.getPower().effect(player, opponent);
-        
-        ActionChoice choiceOponent = opponent.getControler().FightChoice();
-        Action ac2 = new Action(player,opponent,choiceOponent);
-        Effect effect2 = choiceOponent.getPower().effect(player, opponent);
+        Choice choiceOponent = opponent.getControler().FightChoice();
+        Action ac2 = new Action(opponent,player,choiceOponent);
         int dextPlayer = player.getValueCarac(Caracteristics.DEXTERITY);
         int dextOpponent = opponent.getValueCarac(Caracteristics.DEXTERITY);
         int success = roll(50)-25;
         if (dextPlayer > dextOpponent + success){
-            ac1.applyAction();
-            ac2.applyAction();
+            effect1 = ac1.applyAction();
+            Display.PrintEffect(effect1,player);
+            effect2 = ac2.applyAction();
+            Display.PrintEffect(effect2,opponent);
         }
         else{
-            ac2.applyAction();
-            ac1.applyAction();
+            effect2 = ac2.applyAction();
+            Display.PrintEffect(effect2,opponent);
+            effect1 = ac1.applyAction();
+            Display.PrintEffect(effect1,player);
         }
         boolean permanent = effect1.isPermanent();
         if (permanent  == false){

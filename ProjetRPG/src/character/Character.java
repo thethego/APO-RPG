@@ -55,16 +55,16 @@ public class Character {
     
     public void applyEffect (Effect effect)
     {
-        Caracteristics c = effect.getC();
+        Caracteristics c = effect.getCarac();
         int valueInit = getValueCarac(c);
         int valueEffect = effect.getValue();
         this.caracteristics.put(c , valueInit + valueEffect);
-        if(c==Caracteristics.DAMAGE)
-            System.out.println(this.name+valueEffect);
+        if(getValueCarac(Caracteristics.DAMAGE)>getValueCarac(Caracteristics.HEALTH))
+            this.caracteristics.put(Caracteristics.DAMAGE, getValueCarac(Caracteristics.HEALTH));
     }
     
     public void CancelEffect(action.Effect effect){
-            Caracteristics c = effect.getC();
+            Caracteristics c = effect.getCarac();
         int valueInit = getValueCarac(c);
         int valueEffect = effect.getValue();
         this.caracteristics.put(c , valueInit - valueEffect);
@@ -157,6 +157,10 @@ public class Character {
     
     public int getHealth(){
         return (int)this.caracteristics.get(Caracteristics.HEALTH);
+    }
+    
+    public void restoreHealth(){
+        this.caracteristics.put(Caracteristics.DAMAGE, 0);
     }
     
 }

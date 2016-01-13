@@ -1,6 +1,6 @@
 package controler;
 
-import action.ActionFight;
+import action.ChoiceFight;
 import java.util.Scanner;
 
 public class ControlerHuman extends Controler {
@@ -14,10 +14,10 @@ public class ControlerHuman extends Controler {
     }
     
     @Override
-    public ActionFight FightChoice(){
+    public ChoiceFight FightChoice(){
         System.out.println();
         int n = 0;
-        for(ActionFight af : ActionFight.values()){
+        for(ChoiceFight af : ChoiceFight.values()){
             System.out.println(af);
             n++;
         }
@@ -31,13 +31,13 @@ public class ControlerHuman extends Controler {
             i = sc.nextInt();
             System.out.println();
         }
-        for(ActionFight af2 : ActionFight.values()){
+        for(ChoiceFight af2 : ChoiceFight.values()){
             if(af2.getNumber()==i){
                 System.out.println("Vous avez choisi de "+af2.getName());
                 return af2;
             }
         }
-        return ActionFight.ATTACK;
+        return ChoiceFight.ATTACK;
     }
     
 

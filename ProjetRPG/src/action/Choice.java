@@ -9,7 +9,7 @@ package action;
  *
  * @author theo
  */
-public interface ActionChoice {
+public interface Choice {
     
     public String getName();
     public int getNumber();

@@ -10,6 +10,8 @@ package projectrpg;
  * @author SAM
  */
 
+import action.Effect;
+import character.Caracteristics;
 import character.Character;
 
 public class Display {
@@ -40,10 +42,14 @@ public class Display {
         System.out.println("Bonjour "+name);
     }
     
-    public static void PrintLifes(Character player,Character opponent){
+    public static void PrintCarac(Character player,Character opponent){
         System.out.println();
-        System.out.println("Il vous reste "+player.calculHealth()+" vies sur "+player.getHealth());
-        System.out.println("Il reste "+opponent.calculHealth()+" sur "+opponent.getHealth()+ " vies à votre ennemi.");
+        System.out.println(player.getName()+"-> health :"+player.calculHealth()+"/"+player.getValueCarac(Caracteristics.HEALTH)+" dextérité :"+player.getValueCarac(Caracteristics.DEXTERITY)+" force :"+player.getValueCarac(Caracteristics.FORCE));
+        System.out.println(opponent.getName()+"-> health :"+opponent.calculHealth()+"/"+opponent.getValueCarac(Caracteristics.HEALTH)+" dextérité :"+opponent.getValueCarac(Caracteristics.DEXTERITY)+" force :"+opponent.getValueCarac(Caracteristics.FORCE));
         System.out.println();
+    }
+    
+    public static void PrintEffect(Effect effect,Character c){
+        System.out.println(c.getName()+" a infligé "+effect.getValue()+" "+effect.getCarac().name());
     }
 }

@@ -6,21 +6,22 @@ public final class Action {
     
     private Character source;
     private Character target;
-    private ActionChoice choice;
+    private Choice choice;
     
     
-    public Action(Character source, Character target,ActionChoice choice) {
+    public Action(Character source, Character target,Choice choice) {
         this.source = source;
         this.target = target;
         this.choice = choice;
     }
     
-    public void applyAction(){
+    public Effect applyAction(){
+        Effect e = choice.getPower().effect(source, target);
         target.applyEffect(choice.getPower().effect(source, target));
-        
+        return e;
     }
 
-    public ActionChoice getChoice() {
+    public Choice getChoice() {
         return choice;
     }
 }

@@ -16,7 +16,7 @@ public class Effect {
     
     
 
-    public Caracteristics getC() {
+    public Caracteristics getCarac() {
         return c;
     }
 

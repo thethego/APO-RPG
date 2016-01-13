@@ -25,6 +25,7 @@ public class Game {
         Fight fight;
         for(int i =0;i<10;i++){
             fight = new Fight(player);
+            player.restoreHealth();
         }
     }
 }
