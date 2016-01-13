@@ -18,7 +18,6 @@ public class Character {
     private final String name;
     private int level;
     private int maxweight;
-    private int maxhealth;
     private Controler controler;
     private Map<Caracteristics, Integer> caracteristics;
     private List<Item> arrayItem;
@@ -31,7 +30,6 @@ public class Character {
         this.name = name;
         this.level = level;
         this.maxweight = maxweight;
-        this.maxhealth = healthMax;
         this.caracteristics = caracteristics;
         this.controler = controler;
         this.arrayItem = new ArrayList<>();
@@ -61,6 +59,8 @@ public class Character {
         int valueInit = getValueCarac(c);
         int valueEffect = effect.getValue();
         this.caracteristics.put(c , valueInit + valueEffect);
+        if(c==Caracteristics.DAMAGE)
+            System.out.println(this.name+valueEffect);
     }
     
     public void equipWeapon(int i, Weapon weapon)
@@ -108,7 +108,7 @@ public class Character {
     
     public int calculHealth()
     {
-        return (int)this.caracteristics.get(Caracteristics.HEALTH);
+        return (int)this.caracteristics.get(Caracteristics.HEALTH)-this.caracteristics.get(Caracteristics.DAMAGE);
     }
     
     public int getValueCarac(Caracteristics c){
@@ -142,6 +142,14 @@ public class Character {
 
     public void setCaracteristics(Map<Caracteristics, Integer> caracteristics) {
         this.caracteristics = caracteristics;
+    }
+    
+    public String getName(){
+        return this.name;
+    }
+    
+    public int getHealth(){
+        return (int)this.caracteristics.get(Caracteristics.HEALTH);
     }
     
 }

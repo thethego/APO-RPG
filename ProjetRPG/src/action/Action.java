@@ -13,7 +13,6 @@ public final class Action {
         this.source = source;
         this.target = target;
         this.choice = choice;
-        target.applyEffect(choice.getPower().effect(source, target));
     }
     
     public void applyAction(){

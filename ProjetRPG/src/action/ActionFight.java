@@ -16,7 +16,7 @@ public enum ActionFight implements ActionChoice {
     
     private String name = "";
     private int number = 0;
-    private Power power;
+    private Power power = null;
    
   //Constructor
   ActionFight(String name,int number, Power pow){
