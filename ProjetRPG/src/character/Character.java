@@ -53,7 +53,10 @@ public class Character {
     
     public void applyEffect (Effect effect)
     {
-        
+        Caracteristics c = effect.getC();
+        int valueInit = getValueCarac(c);
+        int valueEffect = effect.getValue();
+        this.caracteristics.put(c , valueInit + valueEffect);
     }
     
     public void equipWeapon(int i, Weapon weapon)
@@ -129,6 +132,14 @@ public class Character {
 
     public Controler getControler() {
         return controler;
+    }
+
+    public Map<Caracteristics, Integer> getCaracteristics() {
+        return caracteristics;
+    }
+
+    public void setCaracteristics(Map<Caracteristics, Integer> caracteristics) {
+        this.caracteristics = caracteristics;
     }
     
 }

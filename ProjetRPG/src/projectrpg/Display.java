@@ -23,6 +23,8 @@ public class Display {
         System.out.println("-------------------------------------------------");
     }
     
+    
+    
     public static void fight(){
         for(ActionFight af : ActionFight.values()){
             System.out.println(af);   

@@ -13,5 +13,29 @@ public class Effect {
         this.value = value;
         this.permanent = permanent;
     }
+
+    public Caracteristics getC() {
+        return c;
+    }
+
+    public int getValue() {
+        return value;
+    }
+
+    public boolean isPermanent() {
+        return permanent;
+    }
+
+    public void setC(Caracteristics c) {
+        this.c = c;
+    }
+
+    public void setValue(int value) {
+        this.value = value;
+    }
+
+    public void setPermanent(boolean permanent) {
+        this.permanent = permanent;
+    }
     
 }
