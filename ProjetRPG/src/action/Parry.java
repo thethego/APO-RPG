@@ -1,11 +1,16 @@
 package action;
 
+import character.Caracteristics;
 import character.Character;
+import static utils.Dice.roll;
 
 public class Parry extends Power {
 
     @Override
-    public Effect effect(Character source, Character cible) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public Effect effect(Character source, Character target) {
+        int sourceDef=source.getValueCarac(Caracteristics.DEFENCE);
+        int bonus = roll(sourceDef);
+        Effect effect = new Effect(Caracteristics.DEFENCE, sourceDef + bonus, true);
+        return effect;
     }
 }
