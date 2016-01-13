@@ -11,7 +11,9 @@ package projectrpg;
  * @author SAM
  */
 
+import character.Caracteristics;
 import character.Character;
+import character.Warrior;
 import controler.*;
 
 public class Game {
