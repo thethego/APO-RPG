@@ -33,6 +33,7 @@ public class Warrior extends Character{
         caracteristics.put(Caracteristics.DEXTERITY, 10);
         caracteristics.put(Caracteristics.DEFENCE, 2);
         caracteristics.put(Caracteristics.HEALTH, 10);
+        caracteristics.put(Caracteristics.DAMAGE, 0);
     }
     
     

@@ -20,8 +20,16 @@ public class Fight {
         Display.NewFight();
         this.opponent=new character.Warrior((Controler)new ControlerIA());
         Round round;
+        Display.PrintLifes(player,opponent);
         while(player.calculHealth()>0 && opponent.calculHealth()>0 ){
             round = new Round(player,opponent);
+            Display.PrintLifes(player,opponent);
+        }
+        if(player.calculHealth()<=0){
+            Display.Defeat();
+        }
+        else if(opponent.calculHealth()<=0){
+            Display.Victory();
         }
     }
     

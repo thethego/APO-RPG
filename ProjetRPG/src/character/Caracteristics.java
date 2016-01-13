@@ -13,5 +13,6 @@ public enum Caracteristics {
     FORCE,
     DEXTERITY,
     HEALTH,
-    DEFENCE;
+    DEFENCE,
+    DAMAGE;
 }
