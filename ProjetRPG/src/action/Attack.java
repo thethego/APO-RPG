@@ -8,6 +8,7 @@ import item.Weapon;
 
 public class Attack extends Power {
 
+
     @Override
     public Effect effect(Character source, Character target) {
         int dmg;

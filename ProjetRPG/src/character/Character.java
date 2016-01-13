@@ -41,15 +41,19 @@ public class Character {
         this.weapons[1] = null;
     }
 
-    public Character(String name, Controler controler) {
-        this(name,0,10,200,new EnumMap<Caracteristics, Integer>(Caracteristics.class),controler);
-        //Set listKeys=caracteristics.keySet();  // Obtenir la liste des clés
-        //Iterator iterateur=listKeys.iterator();
+    public Character(Controler controler) {
+        this(controler.NameChoice(),0,10,200,new EnumMap<Caracteristics, Integer>(Caracteristics.class),controler);
         for(Caracteristics carac : Caracteristics.values()){
             this.caracteristics.put((Caracteristics)carac, 0);
         }
     }
 
+    public Character(String name,Controler controler) {
+        this(name,0,10,200,new EnumMap<Caracteristics, Integer>(Caracteristics.class),controler);
+        for(Caracteristics carac : Caracteristics.values()){
+            this.caracteristics.put((Caracteristics)carac, 0);
+        }
+    }
     
     public void applyEffect (Effect effect)
     {
@@ -101,9 +105,7 @@ public class Character {
     
     public int calculHealth()
     {
-        int health;
-        health = 100+(int)this.caracteristics.get(Caracteristics.HEALTH)*(int)this.caracteristics.get(Caracteristics.HEALTH)*100;
-        return health;
+        return (int)this.caracteristics.get(Caracteristics.HEALTH);
     }
     
     public int getValueCarac(Caracteristics c){

@@ -1,9 +1,11 @@
 package controler;
 
+import action.ActionFight;
+
 public abstract class Controler {
 
-    private Object agir;
+    public abstract String NameChoice();
 
-    public abstract int choix();
+    public abstract ActionFight FightChoice();
     
 }

@@ -1,30 +1,24 @@
 package controler;
 
 import action.Action;
+import action.ActionFight;
+import utils.Dice;
 
 public class ControlerIA extends Controler {
-    private Action action;
     
     
     @Override
-    public int choix(){
-        return 1;
-    }
-    
-    public ControlerIA(Action action) {
-        this.action = action;
-    }
-    
-
-    public ControlerIA() {
-        
+    public ActionFight FightChoice(){
+        int i = Dice.roll(1, 4);
+        for(ActionFight af : ActionFight.values()){
+            if(af.getNumber()==i)
+                return af;
+        }
+        return null;
     }
 
-    public Action getAction() {
-        return action;
-    }
-
-    public void setAction(Action action) {
-        this.action = action;
+    @Override
+    public String NameChoice() {
+        return "ennemi";
     }
 }

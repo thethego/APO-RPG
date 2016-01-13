@@ -5,6 +5,8 @@
  */
 package projectrpg;
 
+import action.Action;
+import action.ActionChoice;
 import controler.Controler;
 import controler.ControlerIA;
 import character.Character;
@@ -18,10 +20,10 @@ public class Round {
     
     
     public Round(Character player,Character opponent){
-        
-        Display.fight();
-        int choice = player.getControler().choix();
-        int choiceOponent = opponent.getControler().choix();
+        ActionChoice choice = player.getControler().FightChoice();
+        Action.applyAction(player,opponent,choice);
+        ActionChoice choiceOponent = opponent.getControler().FightChoice();
+        Action.applyAction(player,opponent,choiceOponent);
     }
     
 }

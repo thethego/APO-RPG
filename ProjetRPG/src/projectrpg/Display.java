@@ -5,8 +5,6 @@
  */
 package projectrpg;
 
-import action.ActionFight;
-
 /**
  *
  * @author SAM
@@ -21,12 +19,6 @@ public class Display {
         System.out.println("                                                 ");
         System.out.println("                                                 ");
         System.out.println("-------------------------------------------------");
-    }
-    
-    public static void fight(){
-        for(ActionFight af : ActionFight.values()){
-            System.out.println(af);   
-        }
     }
     
     public static void NewFight(){

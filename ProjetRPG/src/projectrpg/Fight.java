@@ -17,7 +17,7 @@ public class Fight {
     private character.Character opponent;
 
     public Fight(Character player) {
-        this.opponent=new character.Character("ennemi",(Controler)new ControlerIA());
+        this.opponent=new character.Character((Controler)new ControlerIA());
         Round round;
         while(player.calculHealth()>0 || opponent.calculHealth()>0 ){
             round = new Round(player,opponent);

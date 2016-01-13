@@ -5,9 +5,6 @@
  */
 package projectrpg;
 
-import controler.Controler;
-import controler.ControlerHuman;
-import character.Character;
 
 /**
  * 
