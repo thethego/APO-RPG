@@ -19,7 +19,7 @@ import controler.*;
 public class Game {
     
     public static void play(){
-        Character player = new Character((Controler)new ControlerHuman());
+        Character player = new Warrior((Controler)new ControlerHuman());
         Display.intro();
         Fight fight;
         for(int i =0;i<10;i++){

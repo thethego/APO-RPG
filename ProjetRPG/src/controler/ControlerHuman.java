@@ -8,6 +8,7 @@ public class ControlerHuman extends Controler {
     
     @Override
     public String NameChoice(){
+        System.out.println("Choisissez un nom : ");
         Scanner sc = new Scanner(System.in);
         String s = sc.nextLine();
         return s;
@@ -22,9 +23,9 @@ public class ControlerHuman extends Controler {
         Scanner sc = new Scanner(System.in);
         int i = sc.nextInt();
         for(ActionFight af : ActionFight.values()){
-            if(af.getNumber()==i)
+            if(af.getNumber()==i-1)
                 return af;
         }
-        return null;
+        return ActionFight.ATTACK;
     }
 }

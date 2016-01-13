@@ -17,8 +17,8 @@ public class Warrior extends Character{
     
     int level;
 
-    public Warrior(String name, Controler controler) {
-        super(name, controler);
+    public Warrior(Controler controler) {
+        super(controler);
         Map<Caracteristics, Integer> caract;
         caract = getCaracteristics();
         CaractModif(caract);

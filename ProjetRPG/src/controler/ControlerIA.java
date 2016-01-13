@@ -11,10 +11,10 @@ public class ControlerIA extends Controler {
     public ActionFight FightChoice(){
         int i = Dice.roll(1, 4);
         for(ActionFight af : ActionFight.values()){
-            if(af.getNumber()==i)
+            if(af.getNumber()==i-1)
                 return af;
         }
-        return null;
+        return ActionFight.ATTACK;
     }
 
     @Override
