@@ -4,7 +4,6 @@ package action;
 import character.Caracteristics;
 import utils.Dice;
 import character.Character;
-import item.Weapon;
 
 public class Attack extends Power {
 
@@ -22,7 +21,7 @@ public class Attack extends Power {
             dmgWeapons = 0;
         }
         dmg=puissanceAttack+dmgWeapons-targetDef;
-        Effect effect = new Effect(Caracteristics.DAMAGE, dmg, true);
+        Effect effect = new Effect(Caracteristics.DAMAGE, dmg, true,target);
         return effect;
         
     }

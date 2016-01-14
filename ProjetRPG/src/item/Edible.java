@@ -13,10 +13,6 @@ public class Edible extends Item {
         this.edibleValue = edibleValue;
         this.permanent = permanent;
     }
-
-    
-    
-     Effect effect = new Effect(caract,edibleValue , permanent);
     
     
 }

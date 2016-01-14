@@ -21,7 +21,7 @@ public class Game {
     public static void play(){
         Character player = new Warrior((Controler)new ControlerHuman());
         Display.intro();
-        Display.Bonjour(player.getName());
+        Display.bonjour(player.getName());
         Fight fight;
         for(int i =0;i<10;i++){
             fight = new Fight(player);

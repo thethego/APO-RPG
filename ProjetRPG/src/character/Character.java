@@ -53,23 +53,6 @@ public class Character {
         }
     }
     
-    public void applyEffect (Effect effect)
-    {
-        Caracteristics c = effect.getCarac();
-        int valueInit = getValueCarac(c);
-        int valueEffect = effect.getValue();
-        this.caracteristics.put(c , valueInit + valueEffect);
-        if(getValueCarac(Caracteristics.DAMAGE)>getValueCarac(Caracteristics.HEALTH))
-            this.caracteristics.put(Caracteristics.DAMAGE, getValueCarac(Caracteristics.HEALTH));
-    }
-    
-    public void CancelEffect(action.Effect effect){
-            Caracteristics c = effect.getCarac();
-        int valueInit = getValueCarac(c);
-        int valueEffect = effect.getValue();
-        this.caracteristics.put(c , valueInit - valueEffect);
-        }
-    
     public void equipWeapon(int i, Weapon weapon)
     {
         this.weapons[i] = weapon;
@@ -121,6 +104,10 @@ public class Character {
     public int getValueCarac(Caracteristics c){
         
         return (int)this.caracteristics.get(c);
+    }
+    
+    public void setValueCarac(Caracteristics c,int n){
+        this.caracteristics.put(c, n);
     }
     
     public void calculDexterity ()

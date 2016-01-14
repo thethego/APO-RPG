@@ -9,54 +9,67 @@ import action.Action;
 import action.Choice;
 import action.Effect;
 import character.Caracteristics;
-import controler.Controler;
-import controler.ControlerIA;
 import character.Character;
-import java.util.List;
 import static utils.Dice.roll;
-import action.Power;
 /**
  *
  * @author theo
  */
 public class Round {
     
-    public List nonPermanentEffect;
-    
+    private Character player1;
+    private Character player2;
+    private Choice c1;
+    private Choice c2;
+    private Action ac1;
+    private Action ac2;
     
     
     public Round(Character player,Character opponent){
         Effect effect1,effect2;
-        Choice choice = player.getControler().FightChoice();
-        Action ac1 = new Action(player,opponent,choice);
-        Choice choiceOponent = opponent.getControler().FightChoice();
-        Action ac2 = new Action(opponent,player,choiceOponent);
-        int dextPlayer = player.getValueCarac(Caracteristics.DEXTERITY);
-        int dextOpponent = opponent.getValueCarac(Caracteristics.DEXTERITY);
-        int success = roll(50)-25;
-        if (dextPlayer > dextOpponent + success){
-            effect1 = ac1.applyAction();
-            Display.PrintEffect(effect1,player);
-            effect2 = ac2.applyAction();
-            Display.PrintEffect(effect2,opponent);
-        }
-        else{
-            effect2 = ac2.applyAction();
-            Display.PrintEffect(effect2,opponent);
-            effect1 = ac1.applyAction();
-            Display.PrintEffect(effect1,player);
-        }
-        boolean permanent = effect1.isPermanent();
-        if (permanent  == false){
-            player.CancelEffect(effect1);
-             
-        }
-        boolean permanent2 = effect2.isPermanent();
-        if (permanent2  == false){
-            player.CancelEffect(effect2);
-             
-        }
+        this.player1=player;
+        this.player2=opponent;
+        c1 = player1.getControler().FightChoice();
+        ac1 = new Action(player1,player2,c1);
+        c2 = player2.getControler().FightChoice();
+        ac2 = new Action(player2,player1,c2);
+        applyActions();
+        Display.printCarac(player,opponent);
+        cancelEffects();
         
     }
+    
+    
+    private void applyActions(){
+        int dextPlayer = player1.getValueCarac(Caracteristics.DEXTERITY);
+        int dextOpponent = player2.getValueCarac(Caracteristics.DEXTERITY);
+        int success = roll(50)-25;
+        if (dextPlayer > dextOpponent + success){
+            ac1.getEffect().apply();
+            Display.printEffect(ac1.getEffect());
+            ac2.getEffect().apply();
+            Display.printEffect(ac2.getEffect());
+        }
+        else{
+            ac2.getEffect().apply();
+            Display.printEffect(ac2.getEffect());
+            ac1.getEffect().apply();
+            Display.printEffect(ac1.getEffect());
+        }
+    }
+    
+    
+    private void cancelEffects(){
+        if (!ac1.getEffect().isPermanent()){
+            ac1.getEffect().cancel();
+             
+        }
+        if (!ac2.getEffect().isPermanent()){
+            ac2.getEffect().cancel();
+             
+        }
+    }
+    
+    
     
 }
