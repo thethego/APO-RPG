@@ -10,6 +10,7 @@ package projectrpg;
  * @author SAM
  */
 
+import action.Action;
 import action.Effect;
 import character.Caracteristics;
 import character.Character;
@@ -30,8 +31,12 @@ public class Display {
         System.out.println("Nouveau combat : ");
     }
     
-    public static void newTurn(){
-        System.out.println("Nouveau tour : ");
+    public static void playerTurn(){
+        System.out.println("A votre tour : ");
+    }
+    
+    public static void opponentTurn(){
+        System.out.println("Au tour de l'adversaire : ");
     }
     
     public static void victory(){
@@ -53,7 +58,16 @@ public class Display {
         System.out.println();
     }
     
-    public static void printEffect(Effect effect){
-        System.out.println(effect.getTarget().getName()+" a gagné "+effect.getValue()+" "+effect.getCaract().name());
+    public static void printEffect(Action action){
+        System.out.print(action.getTarget().getName());
+        if(action.getEffect().getValue()>=0){
+            System.out.print(" a gagné ");
+            System.out.print(action.getEffect().getValue());
+        }
+        else {
+            System.out.print(" a perdu ");
+            System.out.print(-action.getEffect().getValue());
+        }
+        System.out.println(" "+action.getCaracteristic());
     }
 }

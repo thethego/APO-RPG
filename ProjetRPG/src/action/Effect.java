@@ -8,34 +8,33 @@ public class Effect {
     private Caracteristics caract;
     private int value;
     private boolean permanent;
-    private Character target;
 
     public Effect(Caracteristics c, int value, boolean permanent, Character character) {
         this.caract = c;
         this.permanent = permanent;
-        this.target = character;
-        this.value = calculValue(value);
+        this.value = value;
     }
     
-    public void apply(){
+    public void apply(Character target){
+        this.value = calculValue(target);
         target.setValueCarac(caract,target.getValueCarac(caract)+value);
     }
     
-    public void cancel(){
+    public void cancel(Character target){
         target.setValueCarac(caract,target.getValueCarac(caract)-value);
     }
 
-    private int calculValue(int n){
+    private int calculValue(Character target){
         if(caract==Caracteristics.DAMAGE){
             int damage = target.getValueCarac(Caracteristics.DAMAGE);
             int health = target.getValueCarac(Caracteristics.HEALTH);
-            if(damage+value>health)
-                return health-damage;
-            else if(damage+value<0)
+            if(damage+value+health<0)
+                return health+damage;
+            else if(damage+value>0)
                 return 0;
-            else return n;
+            else return this.value;
         }
-        else return n;
+        else return this.value;
     }
     
     public Caracteristics getCaract() {
@@ -60,10 +59,6 @@ public class Effect {
 
     public void setPermanent(boolean permanent) {
         this.permanent = permanent;
-    }
-
-    public Character getTarget() {
-        return target;
     }
     
     

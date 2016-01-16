@@ -98,7 +98,7 @@ public class Character {
     
     public int calculHealth()
     {
-        return (int)this.caracteristics.get(Caracteristics.HEALTH)-this.caracteristics.get(Caracteristics.DAMAGE);
+        return (int)this.caracteristics.get(Caracteristics.HEALTH)+this.caracteristics.get(Caracteristics.DAMAGE);
     }
     
     public int getValueCarac(Caracteristics c){

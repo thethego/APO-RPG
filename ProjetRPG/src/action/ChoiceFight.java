@@ -10,19 +10,23 @@ package action;
  * @author theo
  */
 public enum ChoiceFight implements Choice {
-    ATTACK("attaquer",1,(Power) new Attack()),
-    PARRY("parer",2,(Power) new Parry()),
-    HEAL("guérir",3,(Power) new Heal());
+    ATTACK("attaquer",1,(Power) new Attack(),false,"vie"),
+    PARRY("parer",2,(Power) new Parry(),true,"défense"),
+    HEAL("guérir",3,(Power) new Heal(),true,"vie");
             
     private String name = "";
     private int number = 0;
     private Power power = null;
+    private boolean self;
+    private String caracteristic;
    
   //Constructor
-  ChoiceFight(String name,int number, Power pow){
+  ChoiceFight(String name,int number, Power pow,boolean self,String s){
     this.name = name;
     this.number = number;
     this.power = pow;
+    this.self=self;
+    this.caracteristic=s;
   }
    
     @Override
@@ -45,7 +49,15 @@ public enum ChoiceFight implements Choice {
         return power;
     }
     
-    
+    @Override
+    public boolean getSelf(){
+        return self;
+    }
+
+    @Override
+    public String getString() {
+        return this.caracteristic;
+    }
   
   
 }

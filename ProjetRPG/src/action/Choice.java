@@ -14,4 +14,6 @@ public interface Choice {
     public String getName();
     public int getNumber();
     public Power getPower();
+    public boolean getSelf();
+    public String getString();
 }
