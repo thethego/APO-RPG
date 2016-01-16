@@ -29,7 +29,7 @@ public class Effect {
             int damage = target.getValueCarac(Caracteristics.DAMAGE);
             int health = target.getValueCarac(Caracteristics.HEALTH);
             if(damage+value+health<0)
-                return health+damage;
+                return -(health+damage);
             else if(damage+value>0)
                 return 0;
             else return this.value;
