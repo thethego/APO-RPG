@@ -22,9 +22,13 @@ public class Game {
         
         
         Display.intro();
+
         Character player = Display.classChoice();
         Display.bonjour(player.getName());
         
+
+        Display.bonjour(player.getName());
+
         Fight fight;
         for(int i =0;i<10;i++){
             fight = new Fight(player);

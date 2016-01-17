@@ -34,6 +34,7 @@ public class Display {
         
     }
     
+
   public static Character classChoice( ){
         System.out.println("Choisissez votre classe : ");
         System.out.println("tapez 1 pour être WARRIOR ");
@@ -60,6 +61,7 @@ public class Display {
         
   }
     
+
     public static void newFight(){
         System.out.println("Nouveau combat : ");
     }
