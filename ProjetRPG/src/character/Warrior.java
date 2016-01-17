@@ -24,15 +24,12 @@ public class Warrior extends Character{
         CaractModif(caract);
     }
     
-    
-    
-    
-    
+   
     private void CaractModif(Map<Caracteristics, Integer> caracteristics){
         caracteristics.put(Caracteristics.FORCE, 10);
-        caracteristics.put(Caracteristics.DEXTERITY, 10);
-        caracteristics.put(Caracteristics.DEFENCE, 2);
-        caracteristics.put(Caracteristics.HEALTH, 10);
+        caracteristics.put(Caracteristics.DEXTERITY, 5);
+        caracteristics.put(Caracteristics.DEFENCE, 5);
+        caracteristics.put(Caracteristics.HEALTH, 12);
         caracteristics.put(Caracteristics.DAMAGE, 0);
     }
     

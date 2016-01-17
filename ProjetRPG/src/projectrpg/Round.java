@@ -8,55 +8,50 @@ package projectrpg;
 import action.Action;
 import action.Choice;
 import action.Effect;
-import character.Caracteristics;
-import controler.Controler;
-import controler.ControlerIA;
 import character.Character;
-import java.util.List;
-import static utils.Dice.roll;
-import action.Power;
 /**
  *
  * @author theo
  */
-public class Round {
+public final class Round {
     
-    public List nonPermanentEffect;
+    private Character player;
+    private Character opponent;
+    private Choice choice;
+    private Action action;
     
     
+    public Round(Character pl,Character op){
+        Effect effect1;
+        this.player=pl;
+        this.opponent=op;
+        choice = player.getControler().FightChoice();
+        action = new Action(player,opponent,choice);
+        applyActions();
+        Display.printEffect(action);
+        
+    }
     
-    public Round(Character player,Character opponent){
-        Effect effect1,effect2;
-        Choice choice = player.getControler().FightChoice();
-        Action ac1 = new Action(player,opponent,choice);
-        Choice choiceOponent = opponent.getControler().FightChoice();
-        Action ac2 = new Action(opponent,player,choiceOponent);
-        int dextPlayer = player.getValueCarac(Caracteristics.DEXTERITY);
-        int dextOpponent = opponent.getValueCarac(Caracteristics.DEXTERITY);
-        int success = roll(50)-25;
-        if (dextPlayer > dextOpponent + success){
-            effect1 = ac1.applyAction();
-            Display.PrintEffect(effect1,player);
-            effect2 = ac2.applyAction();
-            Display.PrintEffect(effect2,opponent);
+    
+    public void applyActions(){
+        if (choice.getSelf()){
+             action = new Action(player,player,choice);
         }
         else{
-            effect2 = ac2.applyAction();
-            Display.PrintEffect(effect2,opponent);
-            effect1 = ac1.applyAction();
-            Display.PrintEffect(effect1,player);
+             action = new Action(player,opponent,choice);
         }
-        boolean permanent = effect1.isPermanent();
-        if (permanent  == false){
-            player.CancelEffect(effect1);
-             
+        action.applyEffect();
+    }
+    
+    
+    public void cancelEffects(){
+        if (!action.getEffect().isPermanent()){
+            action.cancelEffect();   
         }
-        boolean permanent2 = effect2.isPermanent();
-        if (permanent2  == false){
-            player.CancelEffect(effect2);
-             
-        }
-        
+    }
+
+    public Action getAction() {
+        return action;
     }
     
 }

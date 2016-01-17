@@ -15,17 +15,25 @@ import java.util.Map;
 public class Thief extends Character{
     
     public Thief(String name, Controler controler) {
-        super(name, controler);
+        super(controler);
+        Map<Caracteristics, Integer> caract;
+        caract = getCaracteristics();
+        CaractModif(caract);
+    }
+
+    public Thief(Controler controler) {
+        super(controler);
         Map<Caracteristics, Integer> caract;
         caract = getCaracteristics();
         CaractModif(caract);
     }
     
     private void CaractModif(Map<Caracteristics, Integer> caracteristics){
-        caracteristics.put(Caracteristics.FORCE, 10);
-        caracteristics.put(Caracteristics.DEXTERITY, 10);
-        caracteristics.put(Caracteristics.DEFENCE, 10);
+        caracteristics.put(Caracteristics.FORCE, 5);
+        caracteristics.put(Caracteristics.DEXTERITY, 15);
+        caracteristics.put(Caracteristics.DEFENCE, 2);
         caracteristics.put(Caracteristics.HEALTH, 10);
+        caracteristics.put(Caracteristics.DAMAGE, 0);
     }
     
 }

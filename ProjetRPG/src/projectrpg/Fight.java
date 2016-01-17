@@ -17,19 +17,31 @@ public class Fight {
     private character.Character opponent;
 
     public Fight(Character player) {
-        Display.NewFight();
+        int nbTour = 1;
+        Display.newFight();
         this.opponent=new character.Warrior((Controler)new ControlerIA());
-        Round round;
-        Display.PrintCarac(player,opponent);
+        Round round1, round2 = null;
+        Display.printCarac(player,opponent);
+        round1 = new Round(player,opponent);
         while(player.calculHealth()>0 && opponent.calculHealth()>0 ){
-            round = new Round(player,opponent);
-            Display.PrintCarac(player,opponent);
+            Display.printCarac(player,opponent);
+            if(nbTour%2 == 0){
+                Display.playerTurn();
+                round1 = new Round(player,opponent);
+                round2.cancelEffects();
+            }
+            else{
+                Display.opponentTurn();
+                round2 = new Round(opponent,player);
+                round1.cancelEffects();
+            }
+            nbTour++;
         }
         if(player.calculHealth()<=0){
-            Display.Defeat();
+            Display.defeat();
         }
         else if(opponent.calculHealth()<=0){
-            Display.Victory();
+            Display.victory();
         }
     }
     

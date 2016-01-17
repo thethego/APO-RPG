@@ -6,22 +6,36 @@ public final class Action {
     
     private Character source;
     private Character target;
-    private Choice choice;
+    private Effect effect;
+    private String caracteristic;
     
     
     public Action(Character source, Character target,Choice choice) {
         this.source = source;
         this.target = target;
-        this.choice = choice;
-    }
-    
-    public Effect applyAction(){
-        Effect e = choice.getPower().effect(source, target);
-        target.applyEffect(choice.getPower().effect(source, target));
-        return e;
+        this.effect = choice.getPower().effect(source, target);
+        this.caracteristic = choice.getString();
     }
 
-    public Choice getChoice() {
-        return choice;
+    public void applyEffect(){
+        this.effect.apply(target);
     }
+    
+    public void cancelEffect(){
+        this.effect.cancel(target);
+    }
+    
+    public Effect getEffect() {
+        return effect;
+    }
+
+    public Character getTarget() {
+        return target;
+    }
+
+    public String getCaracteristic() {
+        return caracteristic;
+    }
+    
+    
 }

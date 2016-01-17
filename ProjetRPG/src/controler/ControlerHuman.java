@@ -13,6 +13,10 @@ public class ControlerHuman extends Controler {
         return s;
     }
     
+      
+        
+    
+    
     @Override
     public ChoiceFight FightChoice(){
         System.out.println();

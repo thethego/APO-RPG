@@ -8,10 +8,9 @@ public class Parry extends Power {
 
     @Override
     public Effect effect(Character source, Character target) {
-        int sourceDef=source.getValueCarac(Caracteristics.DEFENCE);
-        target = source;
-        int bonus = roll(sourceDef);
-        Effect effect = new Effect(Caracteristics.DEFENCE, sourceDef + bonus, false);
+        int sourceDef=target.getValueCarac(Caracteristics.DEFENCE);
+        int bonus = roll(sourceDef)+1;
+        Effect effect = new Effect(Caracteristics.DEFENCE, bonus, false,target);
         return effect;
     }
 }
