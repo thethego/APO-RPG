@@ -11,14 +11,8 @@ package projectrpg;
  */
 
 import action.Action;
-import action.Effect;
 import character.Caracteristics;
 import character.Character;
-import character.Thief;
-import character.Warrior;
-import controler.Controler;
-import controler.ControlerHuman;
-import java.util.Scanner;
 
 public class Display {
     
@@ -32,38 +26,7 @@ public class Display {
         System.out.println("-------------------------------------------------");
         
         
-    }
-    
-
-  public static Character classChoice( ) throws InputException {
-        System.out.println("Choisissez votre classe : ");
-        System.out.println("tapez 1 pour être WARRIOR ");
-        System.out.println("tapez 2 pour être THIEF ");
-        Scanner sc = new Scanner(System.in);
-        int i = sc.nextInt();
-        System.out.println();
-        Character player;
-        if (i!=1 && i!=2){
-             throw new InputException("valeur invalide");
-        }
-        
-        else {
-            
-        if (i==1){
-            player = new Warrior((Controler)new ControlerHuman());
-            return player;
-        }
-        else if (i==2){
-            player = new Thief((Controler)new ControlerHuman());
-            return player;
-        }
-        
-        }
-       
-        return player=null;
-        
-  }
-    
+    }    
 
     public static void newFight(){
         System.out.println("Nouveau combat : ");

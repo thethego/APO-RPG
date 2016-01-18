@@ -3,7 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package action;
+package choice;
+
+import action.Attack;
+import action.Heal;
+import action.Parry;
+import action.Power;
 
 /**
  *
@@ -44,20 +49,20 @@ public enum ChoiceFight implements Choice {
         return number;
     }
 
-    @Override
     public Power getPower() {
         return power;
     }
     
-    @Override
     public boolean getSelf(){
         return self;
     }
 
-    @Override
     public String getString() {
         return this.caracteristic;
     }
-  
+
+    public static Choice[] getValues() {
+        return ChoiceFight.values();
+    }
   
 }

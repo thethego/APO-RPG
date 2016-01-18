@@ -13,7 +13,7 @@ package projectrpg;
 
 
 import character.Character;
-import character.Warrior;
+import choice.ChoiceClass;
 import controler.*;
 
 public class Game {
@@ -22,18 +22,10 @@ public class Game {
         
         
         Display.intro();
-        Character player = null;
-        try{
-        player = Display.classChoice();
-        }
-        catch (InputException e){
-            System.out.println(e.getMessage());
-        }
+        ControlerHuman controler = new ControlerHuman();
+        ChoiceClass choice = (ChoiceClass) controler.choice(ChoiceClass.values());
+        Character player = choice.getCharacter();
         Display.bonjour(player.getName());
-        
-
-        Display.bonjour(player.getName());
-
         Fight fight;
         for(int i =0;i<10;i++){
             fight = new Fight(player);

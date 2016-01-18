@@ -1,15 +1,16 @@
 package controler;
 
-import action.ChoiceFight;
+import choice.Choice;
+import choice.ChoiceFight;
 import utils.Dice;
 
 public class ControlerIA extends Controler {
     
     
     @Override
-    public ChoiceFight FightChoice(){
+    public Choice choice(Choice[] c){
         int i = Dice.roll(1, 3);
-        for(ChoiceFight af : ChoiceFight.values()){
+        for(Choice af : c){
             if(af.getNumber()==i){
                 
                 System.out.println("l'IA a choisi de "+af.getName());

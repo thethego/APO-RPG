@@ -1,5 +1,7 @@
 package action;
 
+import choice.ChoiceFight;
+import choice.Choice;
 import character.Character;
 
 public final class Action {
@@ -11,10 +13,11 @@ public final class Action {
     
     
     public Action(Character source, Character target,Choice choice) {
+        ChoiceFight c = (ChoiceFight) choice;
         this.source = source;
         this.target = target;
-        this.effect = choice.getPower().effect(source, target);
-        this.caracteristic = choice.getString();
+        this.effect = c.getPower().effect(source, target);
+        this.caracteristic = c.getString();
     }
 
     public void applyEffect(){

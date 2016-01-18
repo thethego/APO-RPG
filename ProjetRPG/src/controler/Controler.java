@@ -1,11 +1,11 @@
 package controler;
 
-import action.ChoiceFight;
+import choice.Choice;
 
 public abstract class Controler {
 
     public abstract String NameChoice();
 
-    public abstract ChoiceFight FightChoice();
+    public abstract Choice choice(Choice[] c);
     
 }
