@@ -23,7 +23,7 @@ public class Character {
     private List<Item> arrayItem;
     private Armor armor;
     public Weapon[] weapons;
-    
+    private int xp = 0;
     
 
     public Character(String name, int level, int maxweight, int healthMax, Map<Caracteristics, Integer> caracteristics, Controler controler) {
@@ -55,15 +55,22 @@ public class Character {
     
     public void equipWeapon(int i, Weapon weapon)
     {
-        this.weapons[i] = weapon;
-        
+        int leveln = weapon.getLevelneeded();
+        if(level>=leveln){
+            this.weapons[i] = weapon;
+        }
+        else{System.out.println("niveau insuffisant pour utiliser cet item");}
     }
     
     public void equipArmor(Armor armor)
     {
-        this.armor = armor;
-        int def = this.getValueCarac(Caracteristics.DEFENCE);
-        this.caracteristics.put(DEFENCE, def+ this.armor.armorValue);
+        int leveln = armor.getLevelneeded();
+        if(level>=leveln){
+            this.armor = armor;
+            int def = this.getValueCarac(Caracteristics.DEFENCE);
+            this.caracteristics.put(DEFENCE, def+ this.armor.armorValue);
+        }
+        else{System.out.println("niveau insuffisant pour utiliser cet item");}
     }
     
     public void dropWeapon(int i){
@@ -171,6 +178,12 @@ public class Character {
         this.caracteristics.put(Caracteristics.DAMAGE, 0);
     }
     
-   
+    public void calculLevel(int exp){
+        xp += exp;
+        if (xp> level*500 +100){
+            xp -= level*500 +100;
+            level++;
+        }
+    }
     
 }
