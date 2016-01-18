@@ -9,14 +9,14 @@ package projectrpg;
  *
  * @author SAM
  */
-
+import java.io.*;
 import action.Action;
 import character.Caracteristics;
 import character.Character;
 
 public class Display {
     
-    public static void intro(){
+    public static void intro() {
         System.out.println("-------------------------------------------------");
         System.out.println("                                                 ");
         System.out.println("                                                 ");
@@ -25,7 +25,19 @@ public class Display {
         System.out.println("                                                 ");
         System.out.println("-------------------------------------------------");
         
+        System.out.println();
+        System.out.println();
+        System.out.print("Bienvenue dans...   ");
         
+        System.out.println("Votre jardin");
+                
+
+        System.out.println();
+        System.out.println();
+        System.out.println("Vous êtes vous jamais demandé ce que font vos fruits et légumes lorsque vous n'êtes pas la pour les surveillez ?");
+        System.out.println("Vous allez maintenant pouvoir réaliser votre rève et incarner une banane se promenant dans votre jardin.");
+        System.out.println("Tout d'abord vous devez choisir une classe.");
+       
     }    
 
     public static void newFight(){
@@ -71,4 +83,7 @@ public class Display {
         }
         System.out.println(" "+action.getCaracteristic());
     }
+    
+    
+    
 }
