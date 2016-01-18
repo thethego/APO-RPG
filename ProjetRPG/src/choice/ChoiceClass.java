@@ -15,23 +15,18 @@ import controler.ControlerHuman;
  * @author theo
  */
 public enum ChoiceClass implements Choice {
-    THIEF("voleur",1),
-    WARRIOR("guerrier",2);
+    THIEF("voleur",1,(Character) new Thief(new ControlerHuman())),
+    WARRIOR("guerrier",2,(Character) new Warrior(new ControlerHuman()));
             
     private String name = "";
     private int number = 0;
     private Character character = null;
    
   //Constructor
-  ChoiceClass(String name,int number){
+  ChoiceClass(String name,int number, Character character){
     this.name = name;
     this.number = number;
-    switch(number){
-        case 1 : this.character = (Character) new Thief(new ControlerHuman());
-            break;
-        case 2 : this.character = (Character) new Warrior(new ControlerHuman());
-    }
-    
+    this.character = character;
   }
    
     @Override

@@ -15,6 +15,7 @@ package projectrpg;
 import character.Character;
 import choice.ChoiceClass;
 import controler.*;
+import item.Weapon;
 
 public class Game {
     
