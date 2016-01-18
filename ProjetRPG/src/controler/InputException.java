@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package projectrpg;
+package controler;
 
 /**
  *
@@ -12,7 +12,6 @@ package projectrpg;
 public class InputException extends Exception{
     public InputException(String message){
         super(message);
-       Game.play();
     }
     
 }
