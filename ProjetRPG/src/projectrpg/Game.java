@@ -22,8 +22,13 @@ public class Game {
         
         
         Display.intro();
-
-        Character player = Display.classChoice();
+        Character player = null;
+        try{
+        player = Display.classChoice();
+        }
+        catch (InputException e){
+            System.out.println(e.getMessage());
+        }
         Display.bonjour(player.getName());
         
 

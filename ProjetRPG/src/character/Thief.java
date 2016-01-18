@@ -36,4 +36,6 @@ public class Thief extends Character{
         caracteristics.put(Caracteristics.DAMAGE, 0);
     }
     
+    
+    
 }

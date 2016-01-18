@@ -35,19 +35,20 @@ public class Display {
     }
     
 
-  public static Character classChoice( ){
+  public static Character classChoice( ) throws InputException {
         System.out.println("Choisissez votre classe : ");
         System.out.println("tapez 1 pour être WARRIOR ");
         System.out.println("tapez 2 pour être THIEF ");
         Scanner sc = new Scanner(System.in);
         int i = sc.nextInt();
         System.out.println();
-        while(i<0 || i>2){
-            System.out.println("Veuillez rentrer une valeur valide");
-            i = sc.nextInt();
-            System.out.println();
+        Character player;
+        if (i!=1 && i!=2){
+             throw new InputException("valeur invalide");
         }
-       Character player;
+        
+        else {
+            
         if (i==1){
             player = new Warrior((Controler)new ControlerHuman());
             return player;
@@ -56,8 +57,10 @@ public class Display {
             player = new Thief((Controler)new ControlerHuman());
             return player;
         }
-        return player=null;
         
+        }
+       
+        return player=null;
         
   }
     
