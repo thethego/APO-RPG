@@ -1,7 +1,6 @@
 
 package character;
 
-import action.Effect;
 import static character.Caracteristics.DEFENCE;
 import item.Weapon;
 import item.Armor;

@@ -15,8 +15,8 @@ import controler.Controler;
  * @author theo
  */
 public enum ChoiceClass implements Choice {
-    THIEF("voleur",1),
-    WARRIOR("guerrier",2);
+    THIEF("être un voleur",1),
+    WARRIOR("être un guerrier",2);
             
     private String name = "";
     private int number = 0;
@@ -30,7 +30,7 @@ public enum ChoiceClass implements Choice {
    
     @Override
   public String toString(){
-    return "Pour être un"+name+" tapez "+number+".";
+    return "Pour "+name+" tapez "+number+".";
   }
 
     @Override
