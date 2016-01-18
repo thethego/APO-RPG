@@ -16,10 +16,10 @@ public class Fight {
     
     private character.Character opponent;
 
-    public Fight(Character player) {
+    public Fight(Character player, Character opponent) {
         int nbTour = 1;
         Display.newFight();
-        this.opponent=new character.Warrior((Controler)new ControlerIA());
+        
         Round round1, round2 = null;
         Display.printCarac(player,opponent);
         round1 = new Round(player,opponent);

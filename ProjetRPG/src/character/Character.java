@@ -51,6 +51,14 @@ public class Character {
             this.caracteristics.put((Caracteristics)carac, 0);
         }
     }
+
+    public Character(String name, int level, Controler controler, Map<Caracteristics, Integer> caracteristics, Weapon[] weapons) {
+        this.name = name;
+        this.level = level;
+        this.controler = controler;
+        this.caracteristics = caracteristics;
+        this.weapons = weapons;
+    }
     
     public void equipWeapon(int i, Weapon weapon)
     {
