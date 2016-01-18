@@ -16,12 +16,29 @@ import java.util.Map;
 public class Warrior extends Character{
     
     int level;
+    int force;
+    int dexterity;
+    int defence;
+    int health;
 
     public Warrior(Controler controler) {
         super(controler);
         Map<Caracteristics, Integer> caract;
         caract = getCaracteristics();
         CaractModif(caract);
+    }
+
+    public Warrior(int level, int force, int dexterity, int defence, int health, String name, Controler controler) {
+        super(name, controler);
+        this.level = level;
+        this.force = force;
+        this.dexterity = dexterity;
+        this.defence = defence;
+        this.health = health;
+        Map<Caracteristics, Integer> caract;
+        caract = getCaracteristics();
+        CaractModif2(caract);
+        
     }
     
    
@@ -33,6 +50,12 @@ public class Warrior extends Character{
         caracteristics.put(Caracteristics.DAMAGE, 0);
     }
     
-    
+    private void CaractModif2(Map<Caracteristics, Integer> caracteristics){
+        caracteristics.put(Caracteristics.FORCE, force);
+        caracteristics.put(Caracteristics.DEXTERITY, dexterity);
+        caracteristics.put(Caracteristics.DEFENCE, defence);
+        caracteristics.put(Caracteristics.HEALTH, health);
+        caracteristics.put(Caracteristics.DAMAGE, 0);
+    }
     
 }

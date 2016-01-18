@@ -12,12 +12,15 @@ package projectrpg;
  */
 
 
+import character.Caracteristics;
 import character.Character;
 import choice.ChoiceClass;
 import choice.ChoiceMenu;
 import controler.*;
+import item.Weapon;
+import java.util.Map;
 
-public class Game {
+public final class Game {
     
     private Character player;
     
@@ -28,9 +31,18 @@ public class Game {
         choice.createCharacter(controler);
         this.player = choice.getCharacter();
         Display.bonjour(player.getName());
+        /*
+        Tuto et premier combat
+        */
+        Display.tuto();
+        Character MasterBanana = new character.Warrior(1, 2, 2, 2, 5, "MasterBanana", (Controler)new ControlerIA());
+        Fight tuto = new Fight(player,MasterBanana);
+        menu();
         Fight fight;
         for(int i =0;i<10;i++){
-            fight = new Fight(player);
+            Character opponent=new character.Warrior((Controler)new ControlerIA());
+            fight = new Fight(player,opponent);
+            menu();
             player.restoreHealth();
         }
     }
