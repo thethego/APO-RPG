@@ -15,6 +15,7 @@ package projectrpg;
 import character.Character;
 import character.Warrior;
 import controler.*;
+import item.Weapon;
 
 public class Game {
     
@@ -31,8 +32,8 @@ public class Game {
         }
         Display.bonjour(player.getName());
         
-
-        Display.bonjour(player.getName());
+        
+    
 
         Fight fight;
         for(int i =0;i<10;i++){

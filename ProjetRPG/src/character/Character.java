@@ -77,6 +77,17 @@ public class Character {
         
     }
     
+    public void displayWeapon(){
+        for(int i=0 ; i<2;i++){
+            if (weapons[i]!=null){
+            Weapon weapon = weapons[i];            
+            System.out.println(weapon.getName());
+            weapon.getCaract();
+            }
+            else { System.out.println("pas d'arme dans l'emplacement " + i);}
+        }
+    }
+    
     public int getWeightInventory ()
     {
         int poidsInventaire=0;

@@ -5,6 +5,14 @@ public class Item {
     private int weight;
     private int levelneeded;
 
+    public Item(String name, int weight, int levelneeded) {
+        this.name = name;
+        this.weight = weight;
+        this.levelneeded = levelneeded;
+    }
+
+    
+    
     public String getName() {
         return name;
     }
