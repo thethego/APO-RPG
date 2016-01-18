@@ -13,6 +13,15 @@ public class Edible extends Item {
         this.edibleValue = edibleValue;
         this.permanent = permanent;
     }
-    
+    @Override
+    public void getCaract(){
+        int poids = getWeight();
+        System.out.println("poids =" +poids);
+        int levelneeded = getLevelneeded();
+        System.out.println("niveau requis =" +levelneeded);;
+        System.out.println("bonus de " + caract + " = " +edibleValue);
+        
+
+    }
     
 }

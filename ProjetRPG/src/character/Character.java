@@ -96,6 +96,16 @@ public class Character {
         this.arrayItem.add(item);
     }
     
+    public void displayInventory(){
+        for(int i=0 ; i<arrayItem.size();i++){
+            Item item = arrayItem.get(i);            
+            System.out.println(item.getName());
+            item.getCaract();
+        }
+    }
+    
+    
+    
     public int calculHealth()
     {
         return (int)this.caracteristics.get(Caracteristics.HEALTH)+this.caracteristics.get(Caracteristics.DAMAGE);
@@ -149,5 +159,7 @@ public class Character {
     public void restoreHealth(){
         this.caracteristics.put(Caracteristics.DAMAGE, 0);
     }
+    
+   
     
 }
