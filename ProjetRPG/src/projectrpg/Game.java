@@ -15,7 +15,6 @@ package projectrpg;
 import character.Character;
 import choice.ChoiceClass;
 import controler.*;
-import item.Weapon;
 
 public class Game {
     
@@ -25,6 +24,7 @@ public class Game {
         Display.intro();
         ControlerHuman controler = new ControlerHuman();
         ChoiceClass choice = (ChoiceClass) controler.choice(ChoiceClass.values());
+        choice.createCharacter(controler);
         Character player = choice.getCharacter();
         Display.bonjour(player.getName());
         Fight fight;

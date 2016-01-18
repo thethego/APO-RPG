@@ -8,25 +8,24 @@ package choice;
 import character.Character;
 import character.Thief;
 import character.Warrior;
-import controler.ControlerHuman;
+import controler.Controler;
 
 /**
  *
  * @author theo
  */
 public enum ChoiceClass implements Choice {
-    THIEF("voleur",1,(Character) new Thief(new ControlerHuman())),
-    WARRIOR("guerrier",2,(Character) new Warrior(new ControlerHuman()));
+    THIEF("voleur",1),
+    WARRIOR("guerrier",2);
             
     private String name = "";
     private int number = 0;
     private Character character = null;
    
   //Constructor
-  ChoiceClass(String name,int number, Character character){
+  ChoiceClass(String name,int number){
     this.name = name;
     this.number = number;
-    this.character = character;
   }
    
     @Override
@@ -44,6 +43,15 @@ public enum ChoiceClass implements Choice {
         return number;
     }
 
+    public void createCharacter(Controler controler){
+        switch(number){
+            case 1: character = new Thief(controler);
+                break;
+            case 2: character = new Warrior(controler);
+                break;
+        }
+    }
+    
     public Character getCharacter() {
         return character;
     }
