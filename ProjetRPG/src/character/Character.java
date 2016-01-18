@@ -58,6 +58,7 @@ public class Character {
         int leveln = weapon.getLevelneeded();
         if(level>=leveln){
             this.weapons[i] = weapon;
+            rmInventory (weapon);
         }
         else{System.out.println("niveau insuffisant pour utiliser cet item");}
     }
@@ -69,19 +70,23 @@ public class Character {
             this.armor = armor;
             int def = this.getValueCarac(Caracteristics.DEFENCE);
             this.caracteristics.put(DEFENCE, def+ this.armor.armorValue);
+            rmInventory (armor);
         }
         else{System.out.println("niveau insuffisant pour utiliser cet item");}
     }
     
     public void dropWeapon(int i){
+        Weapon weapon = this.weapons[i];
         this.weapons[i]=null;
+        addInventory (weapon);
     }
     
     public void dropArmor(){
+        Armor armor = this.armor;
         this.armor = null;
         int def = this.getValueCarac(Caracteristics.DEFENCE);
         this.caracteristics.put(DEFENCE, def - this.armor.armorValue);
-        
+        addInventory (armor);
     }
     
     public void displayWeapon(){
