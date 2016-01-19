@@ -52,13 +52,17 @@ public class Character {
             this.caracteristics.put((Caracteristics)carac, 0);
         }
     }
-
+    
     public Character(String name, int level,Controler controler) {
         this(name,0,10,200,new EnumMap<Caracteristics, Integer>(Caracteristics.class),controler);
         for(Caracteristics carac : Caracteristics.values()){
             this.caracteristics.put((Caracteristics)carac, 0);
         }
         this.level =level;
+    }
+    
+    public Character(String name,Controler controler) {
+        this(name,0,controler);
     }
 
     public Character(String name, int level, Controler controler, Map<Caracteristics, Integer> caracteristics, Weapon[] weapons) {

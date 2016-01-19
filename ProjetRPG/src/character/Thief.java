@@ -15,7 +15,7 @@ import java.util.Map;
 public class Thief extends Character{
     
     public Thief(String name, Controler controler) {
-        super(controler);
+        super(name, controler);
         Map<Caracteristics, Integer> caract;
         caract = getCaracteristics();
         CaractModif(caract);
