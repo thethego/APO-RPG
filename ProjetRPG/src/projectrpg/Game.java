@@ -14,8 +14,8 @@ package projectrpg;
 
 import character.Caracteristics;
 import character.Character;
-import choice.Class;
-import choice.MenuVictory;
+import menu.Class;
+import menu.Victory;
 import controler.*;
 import item.Weapon;
 import java.util.Map;

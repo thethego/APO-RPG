@@ -6,7 +6,7 @@
 package projectrpg;
 
 import action.Action;
-import choice.Fight;
+import menu.Fight;
 import action.Effect;
 import character.Character;
 /**
@@ -25,7 +25,7 @@ public final class Round {
         Effect effect1;
         this.player=pl;
         this.opponent=op;
-        choice = (Fight) player.getControler().choice(Fight.values());
+        choice = (Fight) player.getControler().choiceFight(player,opponent);
         action = new Action(player,opponent,choice);
         applyActions();
         Display.printEffect(action);

@@ -21,7 +21,7 @@ public class Character {
     private Map<Caracteristics, Integer> caracteristics;
     private List<Item> arrayItem;
     private Armor armor;
-    public Weapon[] weapons;
+    private Weapon[] weapons;
     private int xp = 0;
     
 

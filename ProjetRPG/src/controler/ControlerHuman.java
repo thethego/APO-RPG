@@ -1,7 +1,10 @@
 package controler;
 
-import choice.Choice;
+import menu.Menu;
 import java.util.Scanner;
+import character.Character;
+import menu.Fight;
+import projectrpg.Display;
 
 public class ControlerHuman extends Controler {
     
@@ -14,11 +17,11 @@ public class ControlerHuman extends Controler {
     }
     
     @Override
-    public Choice choice(Choice[] c){ 
+    public Menu choice(Menu[] c){ 
         System.out.println();
         int n = 0;
         
-        for(Choice af : c){
+        for(Menu af : c){
             System.out.println(af);
             n++;
         }
@@ -34,14 +37,20 @@ public class ControlerHuman extends Controler {
         }
     }
     
-    private Choice checkChoice(Choice[] c,int i) throws InputException {
-        for(Choice af : c){
+    private Menu checkChoice(Menu[] c,int i) throws InputException {
+        for(Menu af : c){
             if(af.getNumber()==i){
                 System.out.println("Vous avez choisi de "+af.getName());
                 return af;
             }
         }
         throw new InputException("InvalidInput");
+    }
+
+    @Override
+    public Menu choiceFight(Character pl, Character op) {
+        Display.printCarac(pl,op);
+        return choice(Fight.values());
     }
 
 }

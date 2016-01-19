@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package choice;
+package menu;
 
 import character.Character;
 import character.Thief;
@@ -14,7 +14,7 @@ import controler.Controler;
  *
  * @author theo
  */
-public enum Class implements Choice {
+public enum Class implements Menu {
     THIEF("être un voleur",1),
     WARRIOR("être un guerrier",2);
             
@@ -57,7 +57,7 @@ public enum Class implements Choice {
     }
     
     
-    public static Choice[] getValues(){
+    public static Menu[] getValues(){
         return Class.values();
     }
 }
