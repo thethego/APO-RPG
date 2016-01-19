@@ -90,11 +90,22 @@ public class Display {
     }
     
     public static void tuto(){
-          System.out.println("Master Banana : -Bienvenue dans le jardin jeune homme ");
-          System.out.println("Master Banana : -Je ne sais pas ce que vous êtes venu chercher ici mais je dois vous prévenir, ce monde est dangereux.");
-          System.out.println("Master Banana : -Il y a des légumes qui trainent dans les parrages et d'autres choses pire encore.");
-          System.out.println("Master Banana : -Avant de vous laisser partir je dois m'assurer que vous êtes capable de vous defendre");
-          System.out.println("Master Banana : -Vous allez devoir me vaincre en duel");
+        System.out.println("Master Banana : -Bienvenue dans le jardin jeune homme ");
+        System.out.println("Master Banana : -Je ne sais pas ce que vous êtes venu chercher ici mais je dois vous prévenir, ce monde est dangereux.");
+        System.out.println("Master Banana : -Il y a des légumes qui trainent dans les parrages et d'autres choses pire encore.");
+        System.out.println("Master Banana : -Avant de vous laisser partir je dois m'assurer que vous êtes capable de vous defendre");
+        System.out.println("Master Banana : -Vous allez devoir me vaincre en duel");
     }
     
+    public static void mainQuest1(String name){
+        System.out.println("Soudain une vieille bannane presque pourris vous aborde :");
+        System.out.println("Vieille bannane : -Ola jeune banane !");
+        System.out.println("Vieille bannane : -Vous devez être le nouveau, " +name+ " c'est ça ?");
+        System.out.println("Vieille bannane : -Je vous ai vu combattre contre le maître.");
+        System.out.println("Vieille bannane : -C'était impressionnant, je n'avais jamais vu quelqu'un le battre du premier coup");
+        System.out.println("Vieille bannane : -J'ai une mission a vous confier.");
+        System.out.println("Vieille bannane : -J'ai besoin qque vous alliez donnez cette lettre à Capucine du village des haricots.");
+        System.out.println("Mais surtout ne dites pas que c'et de ma part.");
+        System.out.println("Je vous fais confiance.");
+    }
 }

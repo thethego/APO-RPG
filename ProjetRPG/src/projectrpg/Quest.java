@@ -7,6 +7,8 @@ package projectrpg;
 
 import controler.Controler;
 import controler.ControlerIA;
+import item.Item;
+import item.UselessItem;
 
 /**
  *
@@ -27,4 +29,16 @@ public class Quest {
         }
         //Fin tuto
     }
+    
+    public static void mainQuest(character.Character player){
+        Display.mainQuest1(player.getName());
+        Item lettre = new UselessItem("lettre",10);
+        player.addInventory(lettre);
+        Display.winItem(lettre);
+            
+            
+    }
+    
+    
+    
 }
