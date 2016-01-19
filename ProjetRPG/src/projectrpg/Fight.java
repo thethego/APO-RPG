@@ -91,6 +91,8 @@ public class Fight {
         }
     }
     
+    
+    
         public void menuDefeat(){
         int menu=1;
         while(menu==1){

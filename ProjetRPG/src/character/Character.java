@@ -189,9 +189,11 @@ public class Character {
     
     public void calculLevel(int exp){
         xp += exp;
+        System.out.println("Vous gagnez " +exp+ "XP");
         if (xp> level*500 +100){
             xp -= level*500 +100;
             level++;
+            System.out.println("Vous passez level " +level);
         }
     }
 

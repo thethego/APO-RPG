@@ -31,9 +31,9 @@ public final class Game {
         choice.createCharacter(controler);
         this.player = choice.getCharacter();
         Display.bonjour(player.getName());
-        /*
-        Tuto et premier combat
-        */
+        
+        //Tuto et premier combat
+        
         Display.tuto();
         Character MasterBanana = new character.Warrior(1, 2, 2, 2, 5, "MasterBanana", (Controler)new ControlerIA());
         Fight tuto = new Fight(player,MasterBanana);
@@ -42,6 +42,10 @@ public final class Game {
             Character opponent=new character.Warrior((Controler)new ControlerIA());
             fight = new Fight(player,opponent);
         }
+        //Fin tuto
+        
+        
+        
     }
     
 
