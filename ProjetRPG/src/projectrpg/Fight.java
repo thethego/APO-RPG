@@ -6,11 +6,13 @@
 package projectrpg;
 
 import character.Character;
+import exception.LevelUpException;
 import menu.Defeat;
 import menu.Victory;
 import item.Item;
 import java.util.ArrayList;
 import java.util.List;
+import menu.LevelUp;
 import utils.Dice;
 
 /**
@@ -54,7 +56,14 @@ public class Fight {
         }
         else if(opponent.calculHealth()<=0){
             Display.victory();
-            player.calculLevel((opponent.getLevel()+1)*100);
+            try {
+                player.calculLevel((opponent.getLevel()+1)*100);
+            } catch (LevelUpException ex) {
+                Display.levelUp(player);
+                LevelUp choice = (LevelUp) player.getControler().choice(LevelUp.values());
+                int n = choice.applyChoice(player);
+                Display.improvement(choice.getName(), n);
+            }
             winItem();
             menuVictory();
         }

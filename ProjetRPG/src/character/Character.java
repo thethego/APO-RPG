@@ -6,6 +6,7 @@ import item.Weapon;
 import item.Armor;
 import item.Item;
 import controler.Controler;
+import exception.LevelUpException;
 import java.util.ArrayList;
 import java.util.EnumMap;
 import java.util.List;
@@ -184,6 +185,15 @@ public class Character {
         this.caracteristics = caracteristics;
     }
     
+    public void setCaracteristic(Caracteristics c,int n){
+        caracteristics.put(c, n);
+    }
+    
+    public void incrementCaracteristic(Caracteristics c,int n){
+        n+=this.caracteristics.get(c);
+        caracteristics.put(c, n);
+    }
+    
     public String getName(){
         return this.name;
     }
@@ -200,13 +210,13 @@ public class Character {
         return level;
     }
     
-    public void calculLevel(int exp){
+    public void calculLevel(int exp) throws LevelUpException {
         xp += exp;
         System.out.println("Vous gagnez " +exp+ "XP");
         if (xp >= xpNextLevel()){
             xp -= xpNextLevel();
             level++;
-            System.out.println("Vous passez level " +level);
+            throw new LevelUpException();
         }
     }
 

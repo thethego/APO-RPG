@@ -13,17 +13,22 @@ public class ControlerIA extends Controler {
     @Override
     public Menu choiceFight(Character pl,Character op){
         Display.printCarac(op,pl);
+        Menu m = null;
         int Def=pl.getValueCarac(Caracteristics.DEFENCE);
         int dmg = calculDmg(pl,op);
         int dmg2 = calculDmg(op,pl);
-        if(dmg > op.calculHealth())
-            return Fight.ATTACK;
+        if(dmg > op.calculHealth()){
+            
+            m = Fight.ATTACK;
+        }
         else if(pl.calculHealth() < dmg2){
             if(Def/2 > (int)0.1*pl.calculHealth())
-                return Fight.PARRY;
-            else return Fight.HEAL;
+                m = Fight.PARRY;
+            else m = Fight.HEAL;
         }
-        else return Fight.ATTACK;
+        else m = Fight.ATTACK;
+        System.out.println("l'IA a choisi de "+m.getName());
+        return m;
     }
     
     //calculate the damage that pl can hope to do to op

@@ -37,9 +37,5 @@ public enum Defeat implements Menu {
     public int getNumber() {
         return number;
     }
-    
-    public static Menu[] getValues() {
-        return Fight.values();
-    }
   
 }

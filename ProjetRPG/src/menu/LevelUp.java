@@ -5,27 +5,28 @@
  */
 package menu;
 
+import character.Caracteristics;
 import character.Character;
-import character.Thief;
-import character.Warrior;
-import controler.Controler;
 
 /**
  *
  * @author theo
  */
-public enum Class implements Menu {
-    THIEF("être un voleur",1),
-    WARRIOR("être un guerrier",2);
+public enum LevelUp implements Menu {
+    FORCE("augmenter votre force",1,Caracteristics.FORCE),
+    DEXTERITY("augmenter votre dextérité",2,Caracteristics.DEXTERITY),
+    DEFENCE("augmenter votre défence",3,Caracteristics.DEFENCE),
+    HEALTH("augmenter votre santé",4,Caracteristics.HEALTH);
             
     private String name = "";
     private int number = 0;
-    private Character character = null;
+    Caracteristics carac = null;
    
   //Constructor
-  Class(String name,int number){
+  LevelUp(String name,int number,Caracteristics c){
     this.name = name;
     this.number = number;
+    this.carac = c;
   }
    
     @Override
@@ -42,17 +43,11 @@ public enum Class implements Menu {
     public int getNumber() {
         return number;
     }
-
-    public void createCharacter(Controler controler){
-        switch(number){
-            case 1: character = new Thief(controler);
-                break;
-            case 2: character = new Warrior(controler);
-                break;
-        }
-    }
     
-    public Character getCharacter() {
-        return character;
+    public int applyChoice(Character player){
+        int n = 10*player.getLevel();
+        player.incrementCaracteristic(carac,n);
+        return n;
     }
+  
 }

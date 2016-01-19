@@ -108,4 +108,11 @@ public class Display {
         System.out.println("Mais surtout ne dites pas que c'et de ma part.");
         System.out.println("Je vous fais confiance.");
     }
+    public static void levelUp(Character player){
+        System.out.println("Vous passez level " +player.getLevel());
+    }
+    
+    public static void improvement(String s, int n){
+        System.out.println("Vous avez " +s+" de "+n);
+    }
 }

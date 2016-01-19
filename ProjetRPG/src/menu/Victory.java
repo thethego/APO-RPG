@@ -12,7 +12,7 @@ package menu;
 public enum Victory implements Menu {
     QUIT("quitter",1),
     SEE("voir l'inventaire",2),
-    NEXT("combat suivant",3);
+    NEXT("faire le combat suivant",3);
             
     private String name = "";
     private int number = 0;
@@ -36,10 +36,6 @@ public enum Victory implements Menu {
     @Override
     public int getNumber() {
         return number;
-    }
-    
-    public static Menu[] getValues() {
-        return Fight.values();
     }
   
 }
