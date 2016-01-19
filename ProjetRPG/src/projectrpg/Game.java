@@ -35,7 +35,7 @@ public final class Game {
         //Tuto et premier combat
         
         Display.tuto();
-        Character MasterBanana = new character.Warrior(1, 2, 2, 2, 5, "MasterBanana", (Controler)new ControlerIA());
+        Character MasterBanana = new character.Monster(1, 2, 2, 2, 5, "MasterBanana", (Controler)new ControlerIA());
         Fight tuto = new Fight(player,MasterBanana);
         Fight fight;
         for(int i =0;i<10;i++){

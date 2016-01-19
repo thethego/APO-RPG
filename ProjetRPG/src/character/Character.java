@@ -38,6 +38,14 @@ public class Character {
         this.weapons[1] = null;
     }
 
+    public Character(String name, int level, Controler controler, Armor armor, Weapon[] weapons) {
+        this.name = name;
+        this.level = level;
+        this.controler = controler;
+        this.armor = armor;
+        this.weapons = weapons;
+    }
+
     public Character(Controler controler) {
         this(controler.NameChoice(),0,10,200,new EnumMap<Caracteristics, Integer>(Caracteristics.class),controler);
         for(Caracteristics carac : Caracteristics.values()){
@@ -45,11 +53,12 @@ public class Character {
         }
     }
 
-    public Character(String name,Controler controler) {
+    public Character(String name, int level,Controler controler) {
         this(name,0,10,200,new EnumMap<Caracteristics, Integer>(Caracteristics.class),controler);
         for(Caracteristics carac : Caracteristics.values()){
             this.caracteristics.put((Caracteristics)carac, 0);
         }
+        this.level =level;
     }
 
     public Character(String name, int level, Controler controler, Map<Caracteristics, Integer> caracteristics, Weapon[] weapons) {
