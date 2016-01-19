@@ -60,9 +60,5 @@ public enum Fight implements Menu {
     public String getString() {
         return this.caracteristic;
     }
-
-    public static Menu[] getValues() {
-        return Fight.values();
-    }
   
 }

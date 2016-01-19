@@ -97,4 +97,11 @@ public class Display {
           System.out.println("Master Banana : -Vous allez devoir me vaincre en duel");
     }
     
+    public static void levelUp(Character player){
+        System.out.println("Vous passez level " +player.getLevel());
+    }
+    
+    public static void improvement(String s, int n){
+        System.out.println("Vous avez " +s+" de "+n);
+    }
 }

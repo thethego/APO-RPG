@@ -1,5 +1,6 @@
 package controler;
 
+import exception.InputException;
 import menu.Menu;
 import java.util.Scanner;
 import character.Character;
