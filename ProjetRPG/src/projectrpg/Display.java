@@ -13,6 +13,7 @@ import java.io.*;
 import action.Action;
 import character.Caracteristics;
 import character.Character;
+import item.Item;
 
 public class Display {
     
@@ -62,6 +63,10 @@ public class Display {
     
     public static void bonjour(String name){
         System.out.println("Bonjour "+name);
+    }
+    
+    public static void winItem(Item i){
+        System.out.println("Vous avez gagner : "+i.getName());
     }
     
     public static void printCarac(Character player,Character opponent){

@@ -7,6 +7,10 @@ package projectrpg;
 
 import controler.*;
 import character.Character;
+import item.Item;
+import java.util.ArrayList;
+import java.util.List;
+import utils.Dice;
 
 /**
  *
@@ -14,9 +18,12 @@ import character.Character;
  */
 public class Fight {
     
-    private character.Character opponent;
+    private Character opponent;
+    private Character player;
 
-    public Fight(Character player, Character opponent) {
+    public Fight(Character p, Character o) {
+        this.player=p;
+        this.opponent=o;
         int nbTour = 1;
         Display.newFight();
         
@@ -42,7 +49,22 @@ public class Fight {
         }
         else if(opponent.calculHealth()<=0){
             Display.victory();
+            player.calculLevel((opponent.getLevel()+1)*100);
+            winItem();
         }
+    }
+    
+    private void winItem(){
+       List<Item> arrayItem = new ArrayList<>();
+       if(player.getArmor() != null)
+           arrayItem.add(player.getArmor());
+       if(player.getWeapons()[1] != null)
+           arrayItem.add(player.getWeapons()[1]);
+       if(player.getWeapons()[2] != null)
+           arrayItem.add(player.getWeapons()[2]);
+       Item item = arrayItem.get(Dice.roll(arrayItem.size()));
+       player.addInventory(item);
+       Display.winItem(item);
     }
     
 }

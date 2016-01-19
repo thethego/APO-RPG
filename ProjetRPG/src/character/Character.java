@@ -134,8 +134,6 @@ public class Character {
         }
     }
     
-    
-    
     public int calculHealth()
     {
         return (int)this.caracteristics.get(Caracteristics.HEALTH)+this.caracteristics.get(Caracteristics.DAMAGE);
@@ -148,11 +146,6 @@ public class Character {
     
     public void setValueCarac(Caracteristics c,int n){
         this.caracteristics.put(c, n);
-    }
-    
-    public void calculDexterity ()
-    {
-        
     }
     
     public void incrementLevel()
@@ -189,6 +182,10 @@ public class Character {
     public void restoreHealth(){
         this.caracteristics.put(Caracteristics.DAMAGE, 0);
     }
+
+    public int getLevel() {
+        return level;
+    }
     
     public void calculLevel(int exp){
         xp += exp;
@@ -197,5 +194,15 @@ public class Character {
             level++;
         }
     }
+
+    public Armor getArmor() {
+        return armor;
+    }
+
+    public Weapon[] getWeapons() {
+        return weapons;
+    }
+    
+    
     
 }
