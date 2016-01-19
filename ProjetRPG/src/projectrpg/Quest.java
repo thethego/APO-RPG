@@ -22,19 +22,17 @@ public class Quest {
         Display.tuto();
         character.Character MasterBanana = new character.Monster(1, 2, 2, 2, 5, "MasterBanana", (Controler)new ControlerIA());
         Fight tuto = new Fight(player,MasterBanana);
-        Fight fight;
-        for(int i =0;i<10;i++){
-            character.Character opponent=new character.Warrior((Controler)new ControlerIA());
-            fight = new Fight(player,opponent);
-        }
+        
         //Fin tuto
     }
     
     public static void mainQuest(character.Character player){
         Display.mainQuest1(player.getName());
-        Item lettre = new UselessItem("lettre",10);
+      
+        Item lettre = new Item("lettre",10,0);
         player.addInventory(lettre);
         Display.winItem(lettre);
+        
             
             
     }

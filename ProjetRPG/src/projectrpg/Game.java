@@ -36,7 +36,13 @@ public final class Game {
         Display.bonjour(player.getName());
         
         Quest.tuto(player);
+        Quest.mainQuest(player);
         
+        Fight fight;
+        for(int i =0;i<10;i++){
+            character.Character opponent=new character.Warrior((Controler)new ControlerIA());
+            fight = new Fight(player,opponent);
+        }
         
         
     }
