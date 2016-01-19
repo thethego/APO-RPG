@@ -5,8 +5,9 @@
  */
 package projectrpg;
 
-import controler.*;
 import character.Character;
+import choice.MenuDefeat;
+import choice.MenuVictory;
 import item.Item;
 import java.util.ArrayList;
 import java.util.List;
@@ -23,7 +24,12 @@ public class Fight {
 
     public Fight(Character p, Character o) {
         this.player=p;
+        player.restoreHealth();
         this.opponent=o;
+        this.play();
+    }
+    
+    public void play(){
         int nbTour = 1;
         Display.newFight();
         
@@ -46,25 +52,60 @@ public class Fight {
         }
         if(player.calculHealth()<=0){
             Display.defeat();
+            menuDefeat();
         }
         else if(opponent.calculHealth()<=0){
             Display.victory();
             player.calculLevel((opponent.getLevel()+1)*100);
             winItem();
+            menuVictory();
         }
     }
     
     private void winItem(){
-       List<Item> arrayItem = new ArrayList<>();
-       if(player.getArmor() != null)
+        List<Item> arrayItem = new ArrayList<>();
+        if(player.getArmor() != null)
            arrayItem.add(player.getArmor());
-       if(player.getWeapons()[1] != null)
+         if(player.getWeapons()[0] != null)
+           arrayItem.add(player.getWeapons()[0]);
+        if(player.getWeapons()[1] != null)
            arrayItem.add(player.getWeapons()[1]);
-       if(player.getWeapons()[2] != null)
-           arrayItem.add(player.getWeapons()[2]);
-       Item item = arrayItem.get(Dice.roll(arrayItem.size()));
-       player.addInventory(item);
-       Display.winItem(item);
+        int n = arrayItem.size();
+        if (n>0){
+            Item item = arrayItem.get(Dice.roll(n));
+            player.addInventory(item);
+            Display.winItem(item);
+       }
     }
     
+    public void menuVictory(){
+        int menu=1;
+        while(menu==1){
+            MenuVictory choiceMenu = (MenuVictory) player.getControler().choice(MenuVictory.values());
+            switch(choiceMenu.getNumber()){
+            case 1 : System.exit(0);
+                break;
+            case 2 : player.displayInventory();
+                break;
+            case 3 : menu=0;
+                break;
+            }
+        }
+    }
+    
+        public void menuDefeat(){
+        int menu=1;
+        while(menu==1){
+            MenuDefeat choiceMenu = (MenuDefeat) player.getControler().choice(MenuDefeat.values());
+            switch(choiceMenu.getNumber()){
+            case 1 : System.exit(0);
+                break;
+            case 2 : player.displayInventory();
+                break;
+            case 3 : menu=0;
+                play();
+                break;
+            }
+        }
+    }
 }

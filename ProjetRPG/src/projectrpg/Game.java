@@ -14,8 +14,8 @@ package projectrpg;
 
 import character.Caracteristics;
 import character.Character;
-import choice.ChoiceClass;
-import choice.ChoiceMenu;
+import choice.Class;
+import choice.MenuVictory;
 import controler.*;
 import item.Weapon;
 import java.util.Map;
@@ -27,7 +27,7 @@ public final class Game {
     public Game(){
         Display.intro();
         ControlerHuman controler = new ControlerHuman();
-        ChoiceClass choice = (ChoiceClass) controler.choice(ChoiceClass.values());
+        Class choice = (Class) controler.choice(Class.values());
         choice.createCharacter(controler);
         this.player = choice.getCharacter();
         Display.bonjour(player.getName());
@@ -37,28 +37,12 @@ public final class Game {
         Display.tuto();
         Character MasterBanana = new character.Warrior(1, 2, 2, 2, 5, "MasterBanana", (Controler)new ControlerIA());
         Fight tuto = new Fight(player,MasterBanana);
-        menu();
         Fight fight;
         for(int i =0;i<10;i++){
             Character opponent=new character.Warrior((Controler)new ControlerIA());
             fight = new Fight(player,opponent);
-            menu();
-            player.restoreHealth();
         }
     }
     
-    public void menu(){
-        int menu=1;
-        while(menu==1){
-            ChoiceMenu choiceMenu = (ChoiceMenu) player.getControler().choice(ChoiceMenu.values());
-            switch(choiceMenu.getNumber()){
-            case 1 : System.exit(0);
-                break;
-            case 2 : player.displayInventory();
-                break;
-            case 3 : menu=0;
-                break;
-            }
-        }
-    }
+
 }

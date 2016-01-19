@@ -14,7 +14,7 @@ import controler.Controler;
  *
  * @author theo
  */
-public enum ChoiceClass implements Choice {
+public enum Class implements Choice {
     THIEF("être un voleur",1),
     WARRIOR("être un guerrier",2);
             
@@ -23,7 +23,7 @@ public enum ChoiceClass implements Choice {
     private Character character = null;
    
   //Constructor
-  ChoiceClass(String name,int number){
+  Class(String name,int number){
     this.name = name;
     this.number = number;
   }
@@ -58,6 +58,6 @@ public enum ChoiceClass implements Choice {
     
     
     public static Choice[] getValues(){
-        return ChoiceClass.values();
+        return Class.values();
     }
 }

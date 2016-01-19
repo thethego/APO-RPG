@@ -1,6 +1,6 @@
 package action;
 
-import choice.ChoiceFight;
+import choice.Fight;
 import choice.Choice;
 import character.Character;
 
@@ -13,7 +13,7 @@ public final class Action {
     
     
     public Action(Character source, Character target,Choice choice) {
-        ChoiceFight c = (ChoiceFight) choice;
+        Fight c = (Fight) choice;
         this.source = source;
         this.target = target;
         this.effect = c.getPower().effect(source, target);

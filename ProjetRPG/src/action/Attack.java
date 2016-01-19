@@ -21,6 +21,8 @@ public class Attack extends Power {
             dmgWeapons = 0;
         }
         dmg=puissanceAttack+dmgWeapons-targetDef;
+        if(dmg < 0)
+            dmg=0;
         Effect effect = new Effect(Caracteristics.DAMAGE, -dmg, true,target);
         return effect;
         

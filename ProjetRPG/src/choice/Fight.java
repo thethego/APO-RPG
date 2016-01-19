@@ -14,7 +14,7 @@ import action.Power;
  *
  * @author theo
  */
-public enum ChoiceFight implements Choice {
+public enum Fight implements Choice {
     ATTACK("attaquer",1,(Power) new Attack(),false,"vie"),
     PARRY("parer",2,(Power) new Parry(),true,"défense"),
     HEAL("guérir",3,(Power) new Heal(),true,"vie");
@@ -26,7 +26,7 @@ public enum ChoiceFight implements Choice {
     private String caracteristic;
    
   //Constructor
-  ChoiceFight(String name,int number, Power pow,boolean self,String s){
+  Fight(String name,int number, Power pow,boolean self,String s){
     this.name = name;
     this.number = number;
     this.power = pow;
@@ -62,7 +62,7 @@ public enum ChoiceFight implements Choice {
     }
 
     public static Choice[] getValues() {
-        return ChoiceFight.values();
+        return Fight.values();
     }
   
 }

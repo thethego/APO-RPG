@@ -9,7 +9,7 @@ package choice;
  *
  * @author theo
  */
-public enum ChoiceMenu implements Choice {
+public enum MenuVictory implements Choice {
     QUIT("quitter",1),
     SEE("voir l'inventaire",2),
     NEXT("combat suivant",3);
@@ -18,7 +18,7 @@ public enum ChoiceMenu implements Choice {
     private int number = 0;
    
   //Constructor
-  ChoiceMenu(String name,int number){
+  MenuVictory(String name,int number){
     this.name = name;
     this.number = number;
   }
@@ -39,7 +39,7 @@ public enum ChoiceMenu implements Choice {
     }
     
     public static Choice[] getValues() {
-        return ChoiceFight.values();
+        return Fight.values();
     }
   
 }

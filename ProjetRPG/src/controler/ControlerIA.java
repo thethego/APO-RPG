@@ -1,7 +1,7 @@
 package controler;
 
 import choice.Choice;
-import choice.ChoiceFight;
+import choice.Fight;
 import utils.Dice;
 
 public class ControlerIA extends Controler {
@@ -17,7 +17,7 @@ public class ControlerIA extends Controler {
                 return af;
             }
         }
-        return ChoiceFight.ATTACK;
+        return Fight.ATTACK;
     }
 
     @Override
