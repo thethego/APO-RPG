@@ -17,7 +17,13 @@ public class Armor extends Item {
         int poids = getWeight();
         System.out.println("poids =" +poids);
         int levelneeded = getLevelneeded();
-        System.out.println("niveau requis =" +levelneeded);;
+        System.out.println("niveau requis =" +levelneeded);
         System.out.println("bonus d'armure = " + armorValue);
     }
+
+    public int getArmorValue() {
+        return armorValue;
+    }
+    
+    
 }

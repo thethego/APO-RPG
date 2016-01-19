@@ -3,13 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package choice;
+package menu;
 
 /**
  *
  * @author theo
  */
-public enum MenuVictory implements Choice {
+public enum Victory implements Menu {
     QUIT("quitter",1),
     SEE("voir l'inventaire",2),
     NEXT("combat suivant",3);
@@ -18,7 +18,7 @@ public enum MenuVictory implements Choice {
     private int number = 0;
    
   //Constructor
-  MenuVictory(String name,int number){
+  Victory(String name,int number){
     this.name = name;
     this.number = number;
   }
@@ -38,7 +38,7 @@ public enum MenuVictory implements Choice {
         return number;
     }
     
-    public static Choice[] getValues() {
+    public static Menu[] getValues() {
         return Fight.values();
     }
   

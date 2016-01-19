@@ -6,8 +6,8 @@
 package projectrpg;
 
 import character.Character;
-import choice.MenuDefeat;
-import choice.MenuVictory;
+import menu.Defeat;
+import menu.Victory;
 import item.Item;
 import java.util.ArrayList;
 import java.util.List;
@@ -32,9 +32,7 @@ public class Fight {
     public void play(){
         int nbTour = 1;
         Display.newFight();
-        
         Round round1, round2 = null;
-        Display.printCarac(player,opponent);
         round1 = new Round(player,opponent);
         while(player.calculHealth()>0 && opponent.calculHealth()>0 ){
             Display.printCarac(player,opponent);
@@ -81,7 +79,7 @@ public class Fight {
     public void menuVictory(){
         int menu=1;
         while(menu==1){
-            MenuVictory choiceMenu = (MenuVictory) player.getControler().choice(MenuVictory.values());
+            Victory choiceMenu = (Victory) player.getControler().choice(Victory.values());
             switch(choiceMenu.getNumber()){
             case 1 : System.exit(0);
                 break;
@@ -98,7 +96,7 @@ public class Fight {
         public void menuDefeat(){
         int menu=1;
         while(menu==1){
-            MenuDefeat choiceMenu = (MenuDefeat) player.getControler().choice(MenuDefeat.values());
+            Defeat choiceMenu = (Defeat) player.getControler().choice(Defeat.values());
             switch(choiceMenu.getNumber()){
             case 1 : System.exit(0);
                 break;

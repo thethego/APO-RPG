@@ -1,7 +1,7 @@
 package action;
 
-import choice.Fight;
-import choice.Choice;
+import menu.Fight;
+import menu.Menu;
 import character.Character;
 
 public final class Action {
@@ -12,7 +12,7 @@ public final class Action {
     private String caracteristic;
     
     
-    public Action(Character source, Character target,Choice choice) {
+    public Action(Character source, Character target,Menu choice) {
         Fight c = (Fight) choice;
         this.source = source;
         this.target = target;

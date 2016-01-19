@@ -3,15 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package choice;
+package menu;
 
 /**
  *
  * @author theo
  */
-public interface Choice {
+public interface Menu {
     
     public String getName();
     public int getNumber();
-    //public static Choice[] getValues();
 }

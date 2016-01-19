@@ -14,8 +14,8 @@ public class Attack extends Power {
         int dmgWeapons ;
         int puissanceAttack = source.getValueCarac(Caracteristics.FORCE);
         int targetDef=target.getValueCarac(Caracteristics.DEFENCE);
-        if (source.weapons[0] != null){
-            dmgWeapons = Dice.roll(source.weapons[0].dmgMin,  source.weapons[0].dmgMax);
+        if (source.getWeapons()[0] != null){
+            dmgWeapons = Dice.roll(source.getWeapons()[0].dmgMin,  source.getWeapons()[0].dmgMax);
         }        
         else{ 
             dmgWeapons = 0;

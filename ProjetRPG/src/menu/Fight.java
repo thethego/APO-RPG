@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package choice;
+package menu;
 
 import action.Attack;
 import action.Heal;
@@ -14,7 +14,7 @@ import action.Power;
  *
  * @author theo
  */
-public enum Fight implements Choice {
+public enum Fight implements Menu {
     ATTACK("attaquer",1,(Power) new Attack(),false,"vie"),
     PARRY("parer",2,(Power) new Parry(),true,"défense"),
     HEAL("guérir",3,(Power) new Heal(),true,"vie");
@@ -61,7 +61,7 @@ public enum Fight implements Choice {
         return this.caracteristic;
     }
 
-    public static Choice[] getValues() {
+    public static Menu[] getValues() {
         return Fight.values();
     }
   
