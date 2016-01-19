@@ -190,8 +190,8 @@ public class Character {
     public void calculLevel(int exp){
         xp += exp;
         System.out.println("Vous gagnez " +exp+ "XP");
-        if (xp> level*500 +100){
-            xp -= level*500 +100;
+        if (xp >= xpNextLevel()){
+            xp -= xpNextLevel();
             level++;
             System.out.println("Vous passez level " +level);
         }
@@ -204,7 +204,13 @@ public class Character {
     public Weapon[] getWeapons() {
         return weapons;
     }
+
+    public int getXp() {
+        return xp;
+    }
     
-    
+    public int xpNextLevel(){
+        return level*500 +100;
+    }
     
 }

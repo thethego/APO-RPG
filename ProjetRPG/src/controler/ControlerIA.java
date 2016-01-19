@@ -12,7 +12,7 @@ public class ControlerIA extends Controler {
     
     @Override
     public Menu choiceFight(Character pl,Character op){
-        Display.printCarac(pl,op);
+        Display.printCarac(op,pl);
         int Def=pl.getValueCarac(Caracteristics.DEFENCE);
         int dmg = calculDmg(pl,op);
         int dmg2 = calculDmg(op,pl);
