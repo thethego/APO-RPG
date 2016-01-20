@@ -18,7 +18,6 @@ public class ControlerIA extends Controler {
         int dmg = calculDmg(pl,op);
         int dmg2 = calculDmg(op,pl);
         if(dmg > op.calculHealth()){
-            
             m = Fight.ATTACK;
         }
         else if(pl.calculHealth() < dmg2){

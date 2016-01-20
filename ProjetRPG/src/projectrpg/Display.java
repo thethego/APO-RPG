@@ -121,4 +121,8 @@ public class Display {
     public static void improvement(String s, int n){
         System.out.println("Vous avez " +s+" de "+n);
     }
+    
+    public static void displayString(String s){
+        System.out.println(s);
+    }
 }

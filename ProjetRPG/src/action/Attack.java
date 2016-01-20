@@ -4,6 +4,7 @@ package action;
 import character.Caracteristics;
 import utils.Dice;
 import character.Character;
+import projectrpg.Display;
 
 public class Attack extends Power {
 
@@ -32,13 +33,17 @@ public class Attack extends Power {
             dmg=0;
         //test coup critique
         int random = Dice.roll(100);
-        if(random<criticalStrikeChance || target.getLevel()>2*source.getLevel())
+        if(random<criticalStrikeChance || target.getLevel()>2*source.getLevel()){
             dmg *= 2;
+            Display.displayString("coup critique");
+        }
         else{
             //test coup raté
             random = Dice.roll(100);
-            if(random<missChance)
+            if(random<missChance){
                 dmg=0;
+                Display.displayString("attaque manquée");
+            }
         }
         Effect effect = new Effect(Caracteristics.DAMAGE, -dmg, true,target);
         return effect;

@@ -26,7 +26,6 @@ public final class Round {
         this.player=pl;
         this.opponent=op;
         choice = (Fight) player.getControler().choiceFight(player,opponent);
-        action = new Action(player,opponent,choice);
         applyActions();
         Display.printEffect(action);
         
