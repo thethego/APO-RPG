@@ -5,6 +5,8 @@ import menu.Menu;
 import menu.Fight;
 import utils.Dice;
 import character.Character;
+import item.Item;
+import java.util.List;
 import projectrpg.Display;
 
 public class ControlerIA extends Controler {
@@ -57,6 +59,11 @@ public class ControlerIA extends Controler {
                 return af;
             }
         }
+        return null;
+    }
+
+    @Override
+    public Item choiceInventory(List<Item> arrayItem) {
         return null;
     }
 }
