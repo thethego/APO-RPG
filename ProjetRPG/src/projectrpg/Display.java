@@ -54,7 +54,7 @@ public class Display {
     }
     
     public static void victory(){
-        System.out.println("Vous avez gagner");
+        System.out.println("Vous avez gagné");
     }
     
     public static void defeat(){
