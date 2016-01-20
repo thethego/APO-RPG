@@ -38,7 +38,7 @@ public class Monster extends Character {
  
     
     public Monster(int level, int force, int dexterity, int defence, int health, String name, Controler controler,Armor armor, Weapon[] weapons) {
-        super(name,level, controler,armor, weapons);
+        super(name,level, controler);
         this.level = level;
         this.force = force;
         this.dexterity = dexterity;
@@ -47,6 +47,15 @@ public class Monster extends Character {
         Map<Caracteristics, Integer> caract;
         caract = getCaracteristics();
         CaractModif(caract);
+        if (armor!=null){
+            equipArmor(armor);
+        }
+        for(int i=0;i<2;i++){
+            if (weapons[i]!=null){
+                 equipWeapon(i, weapons[i]);
+
+            }
+        }
         
     }
     

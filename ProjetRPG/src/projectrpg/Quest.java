@@ -22,7 +22,9 @@ public class Quest {
         //Tuto et premier combat
         
         Display.tuto();
-        character.Character MasterBanana = new character.Monster(1, 2, 2, 2, 5, "MasterBanana", (Controler)new ControlerIA(),(Armor) null,new Weapon[2]);
+        Weapon épéeDeBase = new Weapon("épéeDeBase",10,1,5,2);
+        Weapon[] weapons ={épéeDeBase,null};
+        character.Character MasterBanana = new character.Monster(1, 2, 2, 2, 5, "MasterBanana", (Controler)new ControlerIA(),(Armor) null,weapons);
         Fight tuto = new Fight(player,MasterBanana);
         
         //Fin tuto
