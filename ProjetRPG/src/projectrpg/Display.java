@@ -126,9 +126,15 @@ public class Display {
         System.out.println("Fraise Musclor : - Eh toi! petite bannane.");
         System.out.println("Fraise Musclor : - D'où tu parle à ma copine ?");
         System.out.println();
-
-
     }
+    
+    public static void end(){
+        System.out.println("Félicitation vous avez fini le jeu.");
+        System.out.println("Vous pouvez continuer à faire des combats en attendant le DLC qui sortira très bientôt");
+        System.out.println("et qui apportera des nouvelles quetes, des nouveaux perso et des nouvelles armes");
+        }
+
+    
     public static void levelUp(Character player){
         System.out.println("Vous passez level " +player.getLevel());
     }
