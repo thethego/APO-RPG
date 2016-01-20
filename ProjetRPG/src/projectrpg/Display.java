@@ -118,6 +118,17 @@ public class Display {
     public static void mainQuest3(){
         System.out.println("Soudain une courgette sauvage apparait !");
     }
+    public static void mainQuestEnd(){
+        System.out.println("Vous arrivez enfin au village des Fraises.");
+        System.out.println("Vous trouvez Capucine et lui donnez la lettre.");
+        System.out.println("Elle commence à la lire...");
+        System.out.println("Soudain elle devient encore plus rouge et appelle une grosse fraise impressionnante et pleine de muscle");
+        System.out.println("Fraise Musclor : - Eh toi! petite bannane.");
+        System.out.println("Fraise Musclor : - D'où tu parle à ma copine ?");
+        System.out.println();
+
+
+    }
     public static void levelUp(Character player){
         System.out.println("Vous passez level " +player.getLevel());
     }
