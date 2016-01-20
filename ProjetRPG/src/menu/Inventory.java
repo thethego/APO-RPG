@@ -5,14 +5,12 @@
  */
 package menu;
 
-import item.Item;
-
 /**
  *
  * @author theo
  */
 public enum Inventory implements Menu {
-    QUIT("quitter",1),
+    QUIT("retourner au menu précédent",1),
     SEE("voir voir un item",2);
             
     private String name = "";

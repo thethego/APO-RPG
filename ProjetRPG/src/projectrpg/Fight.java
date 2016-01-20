@@ -97,19 +97,27 @@ public class Fight {
             case 1 : System.exit(0);
                 break;
             case 2 : 
+                //Si l'utilisteur a choisit de voir l'inventaire
                 player.displayInventory();
                 Inventory choiceInventory = (Inventory) player.getControler().choice(Inventory.values());
                 switch(choiceInventory.getNumber()){
                     case 2:
+                        //si l'utilisateur a choisit de voir un item
                         Item it = player.getControler().choiceInventory(player.getInventory());
                         if(it instanceof Armor || it instanceof Weapon){
                             InventoryEquip choiceItem;
                             choiceItem = (InventoryEquip) player.getControler().choice(InventoryEquip.values());
-                            choiceItem.applyChoice(player);
+                            if(choiceItem.getNumber() == 2)
+                                if(it instanceof Armor)
+                                    player.equipArmor((Armor) it);
+                                 else if(it instanceof Weapon)
+                                     if(player.getWeapons()[0] == null)
+                                        player.equipWeapon(0, (Weapon) it);
+                                     else  player.equipWeapon(1, (Weapon) it);
                         }
                         else if(it instanceof Letter){
                             InventoryLetter choiceItem;
-                            choiceItem = (InventoryLetter) player.getControler().choice(InventoryEquip.values());
+                            choiceItem = (InventoryLetter) player.getControler().choice(InventoryLetter.values());
                             if(choiceItem.getNumber() == 2)
                                 Display.displayString(((Letter)it).getMessage());
                         }
