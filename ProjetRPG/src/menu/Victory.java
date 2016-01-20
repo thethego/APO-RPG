@@ -11,7 +11,7 @@ package menu;
  */
 public enum Victory implements Menu {
     
-    NEXT("faire le combat suivant",1),
+    NEXT("continer",1),
     SEE("voir l'inventaire",2),
     QUIT("quitter",3);
             
