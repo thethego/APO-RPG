@@ -14,7 +14,7 @@ import character.Character;
  */
 public enum InventoryEquip implements Menu {
     QUIT("revenir au menu",1),
-    EQUIP("s'équiper de l'item",2);
+    EQUIP("vous équiper de l'item",2);
             
     private String name = "";
     private int number = 0;
