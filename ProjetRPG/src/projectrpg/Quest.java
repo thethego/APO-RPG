@@ -72,6 +72,7 @@ public class Quest {
 
         character.Character musclorFraise = new character.Monster(5, 20, 20, 20, 20, "musclorFraise", (Controler)new ControlerIA(),armureDeBG ,weapons);
         Fight fight = new Fight(player,musclorFraise);
+        Display.end();
 
     
             
