@@ -10,9 +10,10 @@ package menu;
  * @author theo
  */
 public enum Defeat implements Menu {
-    QUIT("quitter",1),
+    NEXT("relancer le combat",1),
     SEE("voir l'inventaire",2),
-    NEXT("relancer le combat",3);
+    QUIT("quitter",3);
+    
             
     private String name = "";
     private int number = 0;
