@@ -7,11 +7,14 @@ package projectrpg;
 
 import character.Character;
 import exception.LevelUpException;
+import item.*;
 import menu.Defeat;
 import menu.Victory;
-import item.Item;
 import java.util.ArrayList;
 import java.util.List;
+import menu.Inventory;
+import menu.InventoryEquip;
+import menu.InventoryLetter;
 import menu.LevelUp;
 import utils.Dice;
 
@@ -93,7 +96,26 @@ public class Fight {
             switch(choiceMenu.getNumber()){
             case 1 : System.exit(0);
                 break;
-            case 2 : player.displayInventory();
+            case 2 : 
+                player.displayInventory();
+                Inventory choiceInventory = (Inventory) player.getControler().choice(Inventory.values());
+                switch(choiceInventory.getNumber()){
+                    case 2:
+                        Item it = player.getControler().choiceInventory(player.getInventory());
+                        if(it instanceof Armor || it instanceof Weapon){
+                            InventoryEquip choiceItem;
+                            choiceItem = (InventoryEquip) player.getControler().choice(InventoryEquip.values());
+                            choiceItem.applyChoice(player);
+                        }
+                        else if(it instanceof Letter){
+                            InventoryLetter choiceItem;
+                            choiceItem = (InventoryLetter) player.getControler().choice(InventoryEquip.values());
+                            if(choiceItem.getNumber() == 2)
+                                Display.displayString(((Letter)it).getMessage());
+                        }
+                        break;
+                    default: break;
+                }
                 break;
             case 3 : menu=0;
                 break;

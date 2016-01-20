@@ -237,5 +237,10 @@ public class Character {
     public int xpNextLevel(){
         return level*500 +100;
     }
+
+    public List<Item> getInventory() {
+        return arrayItem;
+    }
+    
     
 }

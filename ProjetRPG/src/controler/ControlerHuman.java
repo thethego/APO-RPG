@@ -4,6 +4,8 @@ import exception.InputException;
 import menu.Menu;
 import java.util.Scanner;
 import character.Character;
+import item.Item;
+import java.util.List;
 import menu.Fight;
 import projectrpg.Display;
 
@@ -52,6 +54,31 @@ public class ControlerHuman extends Controler {
     public Menu choiceFight(Character pl, Character op) {
         Display.printCarac(pl,op);
         return choice(Fight.values());
+    }
+    
+    @Override
+    public Item choiceInventory(List<Item> arrayItem){ 
+        System.out.println();
+        System.out.println("Quel item voulez vous voir ?");
+        Scanner sc = new Scanner(System.in);
+        String s = sc.nextLine();
+        System.out.println();
+        try {
+            return checkItem(arrayItem,s);
+        } catch (InputException ex) {
+            System.out.println("Veuillez saisir un item valide :");
+            return choiceInventory(arrayItem);
+        }
+    }
+    
+    private Item checkItem(List<Item> arrayItem,String s) throws InputException {
+        for(Item it : arrayItem){
+            if(it.getName().equals(s)){
+                System.out.println("Vous avez choisi "+it.getName());
+                return it;
+            }
+        }
+        throw new InputException("InvalidInput");
     }
 
 }
