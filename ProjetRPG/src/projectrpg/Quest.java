@@ -67,7 +67,7 @@ public class Quest {
         
         Display.mainQuestEnd();
         Armor armureDeBG = new Armor("armureDeBG",10,1,10);
-        Weapon épéeDeBG = new Weapon("épéeDeBG",10,1,10,20);            
+        Weapon épéeDeBG = new Weapon("épéeDeBG",10,1,20,10);            
         Weapon[] weapons ={épéeDeBG,null};
 
         character.Character musclorFraise = new character.Monster(5, 20, 20, 20, 20, "musclorFraise", (Controler)new ControlerIA(),armureDeBG ,weapons);
