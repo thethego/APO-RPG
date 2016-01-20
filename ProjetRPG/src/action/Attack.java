@@ -11,7 +11,7 @@ public class Attack extends Power {
 
     @Override
     public Effect effect(Character source, Character target) {
-        int dmg;
+        int dmg = 0;
         int dmgWeapons = 0;
         int puissanceAttack = source.getValueCarac(Caracteristics.FORCE);
         int targetDef=target.getValueCarac(Caracteristics.DEFENCE);
@@ -29,8 +29,8 @@ public class Attack extends Power {
             dmgWeapons += Dice.roll(source.getWeapons()[1].dmgMin,  source.getWeapons()[1].dmgMax);
         }
         dmg=puissanceAttack+dmgWeapons-targetDef;
-        if(dmg < 0)
-            dmg=0;
+        if(dmg < 1)
+            dmg=1;
         //test coup critique
         int random = Dice.roll(100);
         if(random<criticalStrikeChance || target.getLevel()>2*source.getLevel()){

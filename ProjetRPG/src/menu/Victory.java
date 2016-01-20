@@ -10,9 +10,10 @@ package menu;
  * @author theo
  */
 public enum Victory implements Menu {
-    QUIT("quitter",1),
+    
+    NEXT("faire le combat suivant",1),
     SEE("voir l'inventaire",2),
-    NEXT("faire le combat suivant",3);
+    QUIT("quitter",3);
             
     private String name = "";
     private int number = 0;
