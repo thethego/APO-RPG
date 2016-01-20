@@ -7,8 +7,10 @@ package projectrpg;
 
 import controler.Controler;
 import controler.ControlerIA;
+import item.Armor;
 import item.Item;
 import item.UselessItem;
+import item.Weapon;
 
 /**
  *
@@ -32,8 +34,12 @@ public class Quest {
         Item lettre = new Item("lettre",10,0);
         player.addInventory(lettre);
         Display.winItem(lettre);
-        
-            
+        Display.mainQuest2();
+        Armor armureDeBase = new Armor("armureDeBase",10,1,5);
+        character.Character courgette = new character.Monster(1, 2, 2, 2, 5, "Courgette", (Controler)new ControlerIA(),armureDeBase ,new Weapon[2]);
+        Fight fight = new Fight(player,courgette);
+
+    
             
     }
     

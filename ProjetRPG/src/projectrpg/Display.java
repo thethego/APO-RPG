@@ -104,9 +104,15 @@ public class Display {
         System.out.println("Vieille bannane : -Je vous ai vu combattre contre le maître.");
         System.out.println("Vieille bannane : -C'était impressionnant, je n'avais jamais vu quelqu'un le battre du premier coup");
         System.out.println("Vieille bannane : -J'ai une mission a vous confier.");
-        System.out.println("Vieille bannane : -J'ai besoin qque vous alliez donnez cette lettre à Capucine du village des haricots.");
+        System.out.println("Vieille bannane : -J'ai besoin qque vous alliez donnez cette lettre à Capucine du village des fraises.");
         System.out.println("Mais surtout ne dites pas que c'et de ma part.");
         System.out.println("Je vous fais confiance.");
+    }
+    public static void mainQuest2(){
+        System.out.println("Vous sortez du village des bannanes et vous prenez la route pour aller chez les fraises");
+        System.out.println("Soudain une courgette sauvage apparait !");
+
+
     }
     public static void levelUp(Character player){
         System.out.println("Vous passez level " +player.getLevel());
