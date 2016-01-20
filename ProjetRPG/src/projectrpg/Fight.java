@@ -75,15 +75,15 @@ public class Fight {
     
     private void winItem(){
         List<Item> arrayItem = new ArrayList<>();
-        if(player.getArmor() != null)
-           arrayItem.add(player.getArmor());
-         if(player.getWeapons()[0] != null)
-           arrayItem.add(player.getWeapons()[0]);
-        if(player.getWeapons()[1] != null)
-           arrayItem.add(player.getWeapons()[1]);
+        if(opponent.getArmor() != null)
+           arrayItem.add(opponent.getArmor());
+         if(opponent.getWeapons()[0] != null)
+           arrayItem.add(opponent.getWeapons()[0]);
+        if(opponent.getWeapons()[1] != null)
+           arrayItem.add(opponent.getWeapons()[1]);
         int n = arrayItem.size();
         if (n>0){
-            Item item = arrayItem.get(Dice.roll(n));
+            Item item = arrayItem.get(Dice.roll(n-1));
             player.addInventory(item);
             Display.winItem(item);
        }

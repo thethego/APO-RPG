@@ -110,9 +110,13 @@ public class Display {
     }
     public static void mainQuest2(){
         System.out.println("Vous sortez du village des bannanes et vous prenez la route pour aller chez les fraises");
+        System.out.println("Un panneau indique : ATTENTION !! vous entrez dans la vallée des courgettes sauvages");
+        System.out.println("Mais vous etes courageux et un peu con donc vous continuer.");
+
+        
+    }
+    public static void mainQuest3(){
         System.out.println("Soudain une courgette sauvage apparait !");
-
-
     }
     public static void levelUp(Character player){
         System.out.println("Vous passez level " +player.getLevel());
