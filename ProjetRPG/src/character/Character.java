@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import java.util.EnumMap;
 import java.util.List;
 import java.util.Map;
+import projectrpg.Display;
 
 
 public class Character {
@@ -79,7 +80,8 @@ public class Character {
             this.weapons[i] = weapon;
             rmInventory (weapon);
         }
-        else{System.out.println("niveau insuffisant pour utiliser cet item");}
+        else
+            Display.displayString("niveau insuffisant pour utiliser cet item");
     }
     
     public void equipArmor(Armor armor)
@@ -91,7 +93,8 @@ public class Character {
             this.caracteristics.put(DEFENCE, def+ this.armor.armorValue);
             rmInventory (armor);
         }
-        else{System.out.println("niveau insuffisant pour utiliser cet item");}
+        else
+            Display.displayString("niveau insuffisant pour utiliser cet item");
     }
     
     public void dropWeapon(int i){
@@ -115,7 +118,8 @@ public class Character {
             System.out.println(weapon.getName());
             weapon.getCaract();
             }
-            else { System.out.println("pas d'arme dans l'emplacement " + i);}
+            else 
+                Display.displayString("pas d'arme dans l'emplacement " + i);
         }
     }
     

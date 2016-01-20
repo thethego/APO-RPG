@@ -59,6 +59,7 @@ public class Fight {
             try {
                 player.calculLevel((opponent.getLevel()+1)*100);
             } catch (LevelUpException ex) {
+                Display.displayString(ex.getMessage());
                 Display.levelUp(player);
                 LevelUp choice = (LevelUp) player.getControler().choice(LevelUp.values());
                 int n = choice.applyChoice(player);

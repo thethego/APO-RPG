@@ -9,7 +9,6 @@ import controler.Controler;
 import controler.ControlerIA;
 import item.Armor;
 import item.Item;
-import item.UselessItem;
 import item.Weapon;
 
 /**
