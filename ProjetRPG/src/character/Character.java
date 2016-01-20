@@ -40,9 +40,7 @@ public class Character {
     }
 
     public Character(String name, int level, Controler controler, Armor armor, Weapon[] weapons) {
-        this.name = name;
-        this.level = level;
-        this.controler = controler;
+        this(name,level,controler);
         this.armor = armor;
         this.weapons = weapons;
     }
