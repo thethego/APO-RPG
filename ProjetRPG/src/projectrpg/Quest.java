@@ -18,6 +18,7 @@ import utils.Dice;
  *
  * @author SAM
  */
+
 public class Quest {
     
     public static void  tuto(character.Character player){

@@ -17,8 +17,10 @@ import character.Character;
 import menu.Class;
 import menu.Victory;
 import controler.*;
+import item.Armor;
 import item.Weapon;
 import java.util.Map;
+import utils.Dice;
 
 public final class Game {
 
@@ -38,14 +40,33 @@ public final class Game {
         Quest.tuto(player);
         Quest.mainQuest(player);
         
-        Fight fight;
-        for(int i =0;i<10;i++){
-            character.Character opponent=new character.Warrior((Controler)new ControlerIA());
-            fight = new Fight(player,opponent);
-        }
+        
+        for(int i=0;i<10;i++){
+            int av = Dice.roll(5+i, 10+i);
+            Armor armureDeBase = new Armor("armureDeBase"+i,10,1,av);
+            int dmgmin = Dice.roll(10+2*i, 20+i);
+            int dmgmax = Dice.roll(10+i, 15+i);
+            Weapon épéeDeBase = new Weapon("épéeDeBase"+i,10,1,dmgmax,dmgmin);            
+            int force =Dice.roll(2+i, 7+i);
+            int dexterity =Dice.roll(1+i, 3+i);
+            int defence =Dice.roll(1+i, 3+i);
+            int health =Dice.roll(5+i, 10+i);
+            int hasard = Dice.roll(1, 2);
+            if(hasard==1){
+                character.Character courgette = new character.Monster(1, force, dexterity, defence, health, "Courgette", (Controler)new ControlerIA(),armureDeBase ,new Weapon[2]);
+                Fight fight = new Fight(player,courgette);
+            }
+            else{
+                Weapon[] weapons ={épéeDeBase,null};
+                character.Character courgette = new character.Monster(1, force, dexterity, defence, health, "Courgette", (Controler)new ControlerIA(),(Armor) null,weapons);
+                Fight fight = new Fight(player,courgette);
+
+            }
+        } 
         
         
     }
     
 
 }
+
